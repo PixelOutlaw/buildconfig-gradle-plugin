@@ -48,6 +48,7 @@ pluginBundle {
     (plugins) {
         "buildconfigkt" {
             displayName = "BuildConfigKt"
+            tags = listOf("kotlin", "build", "config", "buildconfig")
         }
     }
 }
