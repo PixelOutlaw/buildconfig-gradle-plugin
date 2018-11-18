@@ -13,7 +13,7 @@ import java.io.File
 open class GenerateBuildConfigKtTask : DefaultTask() {
     @OutputFile
     val output: File = project.file(
-        BuildConfigUtils.getFileOutputPath(project.buildDir.toPath(), project.group)
+        BuildConfigUtils.getRootOutputPath(project.buildDir.toPath())
     )
 
     init {
@@ -43,6 +43,6 @@ open class GenerateBuildConfigKtTask : DefaultTask() {
         val fileOutput = StringBuilder()
         file.writeTo(fileOutput)
         file.writeTo(output)
-        logger.debug("Wrote \"{}\" to {}", fileOutput, output.absolutePath)
+        logger.debug("Wrote \"{}\" to {}", fileOutput, BuildConfigUtils.getFileOutputPath(project.buildDir.toPath(), project.group))
     }
 }

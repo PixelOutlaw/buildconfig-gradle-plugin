@@ -17,7 +17,7 @@ class BuildConfigKtPlugin : Plugin<Project> {
                     ?.sourceSets
                     ?.findByName("main")
                     ?.kotlin
-                    ?.srcDir(BuildConfigUtils.getFileOutputPath(project.buildDir.toPath(), project.group))
+                    ?.srcDir(BuildConfigUtils.getRootOutputPath(project.buildDir.toPath()))
                 project.tasks.withType(KotlinCompile::class.java).configureEach { task ->
                     task.dependsOn("generateBuildConfigKt")
                 }
