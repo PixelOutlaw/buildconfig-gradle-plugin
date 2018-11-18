@@ -9,7 +9,7 @@ plugins {
     id("pl.allegro.tech.build.axion-release") version "1.9.3"
 }
 
-group = "io.pixeloutlaw.gradle"
+group = "io.pixeloutlaw.gradle.buildconfigkt"
 version = scmVersion.version
 
 repositories {
