@@ -22,8 +22,9 @@ open class GenerateBuildConfigKtTask : DefaultTask() {
 
     @TaskAction
     fun generateBuildConfig() {
-        val buildConfigClass = ClassName(project.group.toString(), "BuildConfig")
-        val file = FileSpec.builder(project.group.toString(), "BuildConfig")
+        val packageName = BuildConfigUtils.convertGavToPackageName(project.group, project.name)
+        val buildConfigClass = ClassName(packageName, "BuildConfig")
+        val file = FileSpec.builder(packageName, "BuildConfig")
             .addType(
                 TypeSpec.objectBuilder(buildConfigClass)
                     .addProperty(
@@ -43,6 +44,10 @@ open class GenerateBuildConfigKtTask : DefaultTask() {
         val fileOutput = StringBuilder()
         file.writeTo(fileOutput)
         file.writeTo(output)
-        logger.debug("Wrote \"{}\" to {}", fileOutput, BuildConfigUtils.getFileOutputPath(project.buildDir.toPath(), project.group))
+        logger.debug(
+            "Wrote \"{}\" to {}",
+            fileOutput,
+            BuildConfigUtils.getFileOutputPath(project.buildDir.toPath(), project.group, project.name)
+        )
     }
 }

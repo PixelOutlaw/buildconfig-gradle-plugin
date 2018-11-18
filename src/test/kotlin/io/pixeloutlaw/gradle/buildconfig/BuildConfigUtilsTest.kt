@@ -14,14 +14,32 @@ class BuildConfigUtilsTest {
     }
 
     @Test
+    fun doesConvertGavToPackageNameReturnTemplatedString() {
+        assertk.assert(BuildConfigUtils.convertGavToPackageName("dank.memes", "dude"))
+            .isEqualTo("dank.memes.dude")
+    }
+
+    @Test
+    fun doesConvertGavToPackageNameReturnTemplatedStringWithDotsReplacedWithUnderscores() {
+        assertk.assert(BuildConfigUtils.convertGavToPackageName("dank.memes", "dude.man"))
+            .isEqualTo("dank.memes.dude_man")
+    }
+
+    @Test
+    fun doesConvertGavToPackageNameReturnTemplatedStringWithHyphensReplacedWithUnderscores() {
+        assertk.assert(BuildConfigUtils.convertGavToPackageName("dank.memes", "dude-man"))
+            .isEqualTo("dank.memes.dude_man")
+    }
+
+    @Test
     fun doesConvertGroupIdToPathHandleStringWithDot() {
-        assertk.assert(BuildConfigUtils.convertGroupIdToPath("dank.memes"))
+        assertk.assert(BuildConfigUtils.convertPackageNameToPath("dank.memes"))
             .isEqualTo(Paths.get(".", "dank", "memes"))
     }
 
     @Test
     fun doesGetFileOutputPathReturnTemplatedStringForPath() {
-        assertk.assert(BuildConfigUtils.getFileOutputPath(currentPath, "dank.memes"))
-            .isEqualTo(currentPath.resolve("generated/source/buildConfig/./dank/memes/BuildConfig.kt"))
+        assertk.assert(BuildConfigUtils.getFileOutputPath(currentPath, "dank.memes", "dude"))
+            .isEqualTo(currentPath.resolve("generated/source/buildConfig/./dank/memes/dude/BuildConfig.kt"))
     }
 }

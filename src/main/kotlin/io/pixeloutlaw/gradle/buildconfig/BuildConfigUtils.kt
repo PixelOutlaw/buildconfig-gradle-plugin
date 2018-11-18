@@ -8,12 +8,17 @@ object BuildConfigUtils {
         return projectBuildDir.resolve("generated/source/buildConfig")
     }
 
-    fun convertGroupIdToPath(groupId: Any): Path {
-        val groupIdSplit = groupId.toString().split(".").toTypedArray()
-        return Paths.get(".", *groupIdSplit)
+    fun convertGavToPackageName(groupId: Any, artifactId: Any): String {
+        return "$groupId.${artifactId.toString().replace("-", "_").replace(".", "_")}"
     }
 
-    fun getFileOutputPath(projectBuildDir: Path, groupId: Any): Path {
-        return getRootOutputPath(projectBuildDir).resolve(convertGroupIdToPath(groupId)).resolve("BuildConfig.kt")
+    fun convertPackageNameToPath(packageName: String): Path {
+        val packageNameSplit = packageName.split(".").toTypedArray()
+        return Paths.get(".", *packageNameSplit)
+    }
+
+    fun getFileOutputPath(projectBuildDir: Path, groupId: Any, artifactId: Any): Path {
+        val packageName = convertGavToPackageName(groupId, artifactId)
+        return getRootOutputPath(projectBuildDir).resolve(convertPackageNameToPath(packageName)).resolve("BuildConfig.kt")
     }
 }
