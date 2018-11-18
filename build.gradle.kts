@@ -5,13 +5,15 @@ plugins {
     kotlin("jvm") version "1.3.10"
     id("java-gradle-plugin")
     id("maven")
+    id("com.gradle.plugin-publish") version "0.10.0"
+    id("pl.allegro.tech.build.axion-release") version "1.9.3"
 }
 
 group = "io.pixeloutlaw.gradle"
-version = "0.0.0-SNAPSHOT"
+version = scmVersion.version
 
 repositories {
-    mavenCentral()
+    jcenter()
 }
 
 dependencies {
@@ -33,6 +35,19 @@ gradlePlugin {
         register("buildconfigkt") {
             id = "io.pixeloutlaw.gradle.buildconfigkt"
             implementationClass = "io.pixeloutlaw.gradle.buildconfig.BuildConfigKtPlugin"
+        }
+    }
+}
+
+pluginBundle {
+    website = "https://github.com/PixelOutlaw/buildconfig-gradle-plugin"
+    vcsUrl = "https://github.com/PixelOutlaw/buildconfig-gradle-plugin"
+
+    description = "Generates a BuildConfig.kt class."
+
+    (plugins) {
+        "buildconfigkt" {
+            displayName = "BuildConfigKt"
         }
     }
 }

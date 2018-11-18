@@ -1,1 +1,1 @@
-rootProject.name = "buildconfig"
+rootProject.name = "buildconfigkt-plugin"
