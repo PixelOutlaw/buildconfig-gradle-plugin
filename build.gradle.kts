@@ -2,7 +2,7 @@ import org.jetbrains.kotlin.config.KotlinCompilerVersion
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    kotlin("jvm") version "1.3.10"
+    kotlin("jvm") version "1.3.11"
     id("java-gradle-plugin")
     id("maven")
     id("com.gradle.plugin-publish") version "0.10.0"
@@ -17,9 +17,9 @@ repositories {
 }
 
 dependencies {
-    implementation(kotlin("stdlib-jdk8"))
-    implementation(kotlin("reflect"))
-    implementation(kotlin("gradle-plugin"))
+    implementation(kotlin("stdlib-jdk8", KotlinCompilerVersion.VERSION))
+    implementation(kotlin("reflect", KotlinCompilerVersion.VERSION))
+    implementation(kotlin("gradle-plugin", KotlinCompilerVersion.VERSION))
     implementation("com.squareup:kotlinpoet:1.0.0-RC2") {
         exclude(group = "org.jetbrains.kotlin")
     }
@@ -60,5 +60,5 @@ tasks.withType<Test> {
     useJUnitPlatform()
 }
 tasks.withType<Wrapper> {
-    gradleVersion = "4.10.2"
+    gradleVersion = "5.1.1"
 }
