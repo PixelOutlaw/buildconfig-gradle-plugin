@@ -1,1 +1,1 @@
-rootProject.name = "io.pixeloutlaw.gradle.buildconfigkt.gradle.plugin"
+rootProject.name = "buildConfigKt"
