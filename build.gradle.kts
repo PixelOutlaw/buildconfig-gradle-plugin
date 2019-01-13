@@ -6,7 +6,7 @@ plugins {
     id("java-gradle-plugin")
     id("maven")
     id("com.gradle.plugin-publish") version "0.10.0"
-    id("pl.allegro.tech.build.axion-release") version "1.9.3"
+    id("pl.allegro.tech.build.axion-release") version "1.10.0"
 }
 
 group = "io.pixeloutlaw.gradle.buildconfigkt"
