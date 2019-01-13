@@ -20,7 +20,7 @@ dependencies {
     implementation(kotlin("stdlib-jdk8", KotlinCompilerVersion.VERSION))
     implementation(kotlin("reflect", KotlinCompilerVersion.VERSION))
     implementation(kotlin("gradle-plugin", KotlinCompilerVersion.VERSION))
-    implementation("com.squareup:kotlinpoet:1.0.0-RC2") {
+    implementation("com.squareup:kotlinpoet:1.0.1") {
         exclude(group = "org.jetbrains.kotlin")
     }
 
