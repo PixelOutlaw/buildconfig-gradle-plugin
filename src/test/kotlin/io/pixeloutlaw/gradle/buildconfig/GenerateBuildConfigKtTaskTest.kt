@@ -59,8 +59,8 @@ class GenerateBuildConfigKtTaskTest {
             writeText(
                 """
                     plugins {
-                        id("io.pixeloutlaw.gradle.buildconfigkt")
                         id("org.jetbrains.kotlin.jvm") version "1.3.11"
+                        id("io.pixeloutlaw.gradle.buildconfigkt")
                     }
 
                     group = "io.pixeloutlaw.gradle"
