@@ -28,14 +28,12 @@ gradlePlugin {
 }
 
 dependencies {
-    implementation(kotlin("stdlib-jdk8", KotlinCompilerVersion.VERSION))
-    implementation(kotlin("reflect", KotlinCompilerVersion.VERSION))
     implementation(kotlin("gradle-plugin", KotlinCompilerVersion.VERSION))
     implementation("com.squareup:kotlinpoet:1.0.1") {
         exclude(group = "org.jetbrains.kotlin")
     }
 
-    testImplementation("com.willowtreeapps.assertk:assertk-jvm:0.12")
+    testImplementation(kotlin("test-junit5", KotlinCompilerVersion.VERSION))
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.3.1")
     testImplementation("org.junit-pioneer:junit-pioneer:0.3.0")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.3.1")

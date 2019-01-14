@@ -1,45 +1,45 @@
 package io.pixeloutlaw.gradle.buildconfig
 
-import assertk.assertions.isEqualTo
 import org.junit.jupiter.api.Test
 import java.nio.file.Paths
+import kotlin.test.assertEquals
 
 class BuildConfigUtilsTest {
     private val currentPath = Paths.get("").toAbsolutePath()
 
     @Test
     fun doesGetRootOutputPathReturnTemplatedStringForPath() {
-        assertk.assert(BuildConfigUtils.getRootOutputPath(currentPath))
-            .isEqualTo(currentPath.resolve("generated/source/buildConfig"))
+        assertEquals(
+            currentPath.resolve("generated/source/buildConfig"),
+            BuildConfigUtils.getRootOutputPath(currentPath)
+        )
     }
 
     @Test
     fun doesConvertGavToPackageNameReturnTemplatedString() {
-        assertk.assert(BuildConfigUtils.convertGavToPackageName("dank.memes", "dude"))
-            .isEqualTo("dank.memes.dude")
+        assertEquals("dank.memes.dude", BuildConfigUtils.convertGavToPackageName("dank.memes", "dude"))
     }
 
     @Test
     fun doesConvertGavToPackageNameReturnTemplatedStringWithDotsReplacedWithUnderscores() {
-        assertk.assert(BuildConfigUtils.convertGavToPackageName("dank.memes", "dude.man"))
-            .isEqualTo("dank.memes.dude_man")
+        assertEquals("dank.memes.dude_man", BuildConfigUtils.convertGavToPackageName("dank.memes", "dude.man"))
     }
 
     @Test
     fun doesConvertGavToPackageNameReturnTemplatedStringWithHyphensReplacedWithUnderscores() {
-        assertk.assert(BuildConfigUtils.convertGavToPackageName("dank.memes", "dude-man"))
-            .isEqualTo("dank.memes.dude_man")
+        assertEquals("dank.memes.dude_man", BuildConfigUtils.convertGavToPackageName("dank.memes", "dude-man"))
     }
 
     @Test
     fun doesConvertGroupIdToPathHandleStringWithDot() {
-        assertk.assert(BuildConfigUtils.convertPackageNameToPath("dank.memes"))
-            .isEqualTo(Paths.get(".", "dank", "memes"))
+        assertEquals(Paths.get(".", "dank", "memes"), BuildConfigUtils.convertPackageNameToPath("dank.memes"))
     }
 
     @Test
     fun doesGetFileOutputPathReturnTemplatedStringForPath() {
-        assertk.assert(BuildConfigUtils.getFileOutputPath(currentPath, "dank.memes", "dude"))
-            .isEqualTo(currentPath.resolve("generated/source/buildConfig/./dank/memes/dude/BuildConfig.kt"))
+        assertEquals(
+            currentPath.resolve("generated/source/buildConfig/./dank/memes/dude/BuildConfig.kt"),
+            BuildConfigUtils.getFileOutputPath(currentPath, "dank.memes", "dude")
+        )
     }
 }

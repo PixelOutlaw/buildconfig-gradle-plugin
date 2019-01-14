@@ -1,8 +1,5 @@
 package io.pixeloutlaw.gradle.buildconfig
 
-import assertk.assertions.contains
-import assertk.assertions.doesNotContain
-import assertk.assertions.isNotNull
 import org.gradle.testkit.runner.GradleRunner
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.extension.ExtendWith
@@ -10,6 +7,9 @@ import org.junitpioneer.jupiter.TempDirectory
 import org.junitpioneer.jupiter.TempDirectory.TempDir
 import java.io.File
 import java.nio.file.Path
+import kotlin.test.assertFalse
+import kotlin.test.assertNotNull
+import kotlin.test.assertTrue
 
 class BuildConfigKtPluginTest {
     @ExtendWith(TempDirectory::class)
@@ -32,8 +32,8 @@ class BuildConfigKtPluginTest {
             .withArguments("tasks", "--all")
             .withPluginClasspath()
             .build()
-        assertk.assert(buildResult.output).isNotNull {
-            it.doesNotContain("generateBuildConfigKt")
+        assertNotNull(buildResult.output) {
+            assertFalse(it.contains("generateBuildConfigKt"))
         }
     }
 
@@ -58,8 +58,8 @@ class BuildConfigKtPluginTest {
             .withArguments("tasks", "--all")
             .withPluginClasspath()
             .build()
-        assertk.assert(buildResult.output).isNotNull {
-            it.contains("generateBuildConfigKt")
+        assertNotNull(buildResult.output) {
+            assertTrue(it.contains("generateBuildConfigKt"))
         }
     }
 }
