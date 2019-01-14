@@ -5,7 +5,7 @@ import java.nio.file.Paths
 
 object BuildConfigUtils {
     fun getRootOutputPath(projectBuildDir: Path): Path {
-        return projectBuildDir.resolve("generated/source/buildConfig")
+        return projectBuildDir.resolve("generated/source/buildConfigKt")
     }
 
     fun convertGavToPackageName(groupId: Any, artifactId: Any): String {
@@ -15,9 +15,5 @@ object BuildConfigUtils {
     fun convertPackageNameToPath(packageName: String): Path {
         val packageNameSplit = packageName.split(".").toTypedArray()
         return Paths.get(".", *packageNameSplit)
-    }
-
-    fun getFileOutputPath(projectBuildDir: Path, packageName: String): Path {
-        return getRootOutputPath(projectBuildDir).resolve(convertPackageNameToPath(packageName)).resolve("BuildConfig.kt")
     }
 }

@@ -10,7 +10,7 @@ class BuildConfigUtilsTest {
     @Test
     fun doesGetRootOutputPathReturnTemplatedStringForPath() {
         assertEquals(
-            currentPath.resolve("generated/source/buildConfig"),
+            currentPath.resolve("generated/source/buildConfigKt"),
             BuildConfigUtils.getRootOutputPath(currentPath)
         )
     }
@@ -33,13 +33,5 @@ class BuildConfigUtilsTest {
     @Test
     fun doesConvertGroupIdToPathHandleStringWithDot() {
         assertEquals(Paths.get(".", "dank", "memes"), BuildConfigUtils.convertPackageNameToPath("dank.memes"))
-    }
-
-    @Test
-    fun doesGetFileOutputPathReturnTemplatedStringForPath() {
-        assertEquals(
-            currentPath.resolve("generated/source/buildConfig/./dank/memes/dude/BuildConfig.kt"),
-            BuildConfigUtils.getFileOutputPath(currentPath, "dank.memes.dude")
-        )
     }
 }
