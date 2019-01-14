@@ -4,17 +4,12 @@ import org.gradle.kotlin.dsl.apply
 import org.gradle.testfixtures.ProjectBuilder
 import org.jetbrains.kotlin.gradle.plugin.KotlinPlatformJvmPlugin
 import org.junit.jupiter.api.Test
-import org.junit.jupiter.api.extension.ExtendWith
-import org.junitpioneer.jupiter.TempDirectory
-import org.junitpioneer.jupiter.TempDirectory.TempDir
-import java.nio.file.Path
 import kotlin.test.assertNotNull
 import kotlin.test.assertNull
 
 class BuildConfigKtPluginTest {
-    @ExtendWith(TempDirectory::class)
     @Test
-    fun doesBuildConfigPluginNotAddGenerateBuildConfigKtTaskWithoutKotlinPlugin(@TempDir tempDir: Path) {
+    fun doesBuildConfigPluginNotAddGenerateBuildConfigKtTaskWithoutKotlinPlugin() {
         val project = ProjectBuilder.builder().build()
         with(project) {
             this.pluginManager.apply(BuildConfigKtPlugin::class)
@@ -25,9 +20,8 @@ class BuildConfigKtPluginTest {
         }
     }
 
-    @ExtendWith(TempDirectory::class)
     @Test
-    fun doesBuildConfigPluginAddGenerateBuildConfigKtTaskWithKotlinPlugin(@TempDir tempDir: Path) {
+    fun doesBuildConfigPluginAddGenerateBuildConfigKtTaskWithKotlinPlugin() {
         val project = ProjectBuilder.builder().build()
         with(project) {
             this.pluginManager.apply(KotlinPlatformJvmPlugin::class)
