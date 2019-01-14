@@ -1,3 +1,4 @@
+import org.gradle.api.tasks.testing.logging.TestLogEvent
 import org.jetbrains.kotlin.config.KotlinCompilerVersion
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
@@ -53,13 +54,16 @@ pluginBundle {
     }
 }
 
-tasks.getting(KotlinCompile::class) {
+tasks.withType<KotlinCompile>().configureEach {
     kotlinOptions.jvmTarget = "1.8"
 }
-tasks.getting(Test::class) {
+tasks.withType<Test>().configureEach {
     useJUnitPlatform { }
+    testLogging {
+        events = setOf(TestLogEvent.PASSED, TestLogEvent.SKIPPED, TestLogEvent.FAILED, TestLogEvent.STANDARD_OUT, TestLogEvent.STANDARD_ERROR)
+    }
 }
-tasks.getting(Wrapper::class) {
+tasks.withType<Wrapper>().configureEach {
     gradleVersion = "5.1.1"
 }
 
