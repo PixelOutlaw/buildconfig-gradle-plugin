@@ -11,6 +11,7 @@ plugins {
     id("com.gradle.build-scan") version Versions.com_gradle_build_scan_gradle_plugin
     id("com.gradle.plugin-publish") version Versions.com_gradle_plugin_publish_gradle_plugin
     id("pl.allegro.tech.build.axion-release") version Versions.pl_allegro_tech_build_axion_release_gradle_plugin
+    id("com.diffplug.gradle.spotless") version Versions.com_diffplug_gradle_spotless_gradle_plugin
 }
 
 group = "io.pixeloutlaw.gradle"
@@ -77,4 +78,13 @@ buildScan {
     termsOfServiceUrl = "https://gradle.com/terms-of-service"
     termsOfServiceAgree = "yes"
     publishAlways()
+}
+
+spotless {
+    kotlin {
+        ktlint()
+    }
+    kotlinGradle {
+        ktlint()
+    }
 }
