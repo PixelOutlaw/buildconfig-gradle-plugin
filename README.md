@@ -3,6 +3,7 @@
 [![][travisCi]](https://travis-ci.com/PixelOutlaw/buildconfig-gradle-plugin)
 
 ## Requirements
+* Gradle >= 4.9
 * Kotlin and JVM projects
 
 ## Installation
