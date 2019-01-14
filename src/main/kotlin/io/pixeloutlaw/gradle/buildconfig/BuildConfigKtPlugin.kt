@@ -15,9 +15,7 @@ class BuildConfigKtPlugin : Plugin<Project> {
                 target.logger.info("Registering buildConfigKt extension...")
                 target.extensions.create<BuildConfigKtExtension>(
                     "buildConfigKt",
-                    target.name,
-                    target.version.toString(),
-                    target.group.toString()
+                    target
                 )
                 target.logger.info("Registering generateBuildConfigKt task...")
                 target.tasks.register("generateBuildConfigKt", GenerateBuildConfigKtTask::class.java)

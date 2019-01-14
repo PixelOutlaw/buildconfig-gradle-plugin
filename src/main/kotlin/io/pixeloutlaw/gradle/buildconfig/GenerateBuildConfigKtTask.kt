@@ -8,6 +8,7 @@ import com.squareup.kotlinpoet.TypeSpec
 import org.gradle.api.DefaultTask
 import org.gradle.api.tasks.OutputDirectory
 import org.gradle.api.tasks.TaskAction
+import org.gradle.kotlin.dsl.getByType
 import java.io.File
 
 open class GenerateBuildConfigKtTask : DefaultTask() {
@@ -22,19 +23,21 @@ open class GenerateBuildConfigKtTask : DefaultTask() {
 
     @TaskAction
     fun generateBuildConfig() {
-        val packageName = BuildConfigUtils.convertGavToPackageName(project.group, project.name)
-        val buildConfigClass = ClassName(packageName, "BuildConfig")
-        val file = FileSpec.builder(packageName, "BuildConfig")
+        val buildConfigKtExtension = project.extensions.getByType(BuildConfigKtExtension::class)
+        val packageName = buildConfigKtExtension.packageName
+        val className = buildConfigKtExtension.className
+        val buildConfigClass = ClassName(packageName, className)
+        val file = FileSpec.builder(packageName, className)
             .addType(
                 TypeSpec.objectBuilder(buildConfigClass)
                     .addProperty(
                         PropertySpec.builder("NAME", String::class, KModifier.CONST)
-                            .initializer("%S", project.name)
+                            .initializer("%S", buildConfigKtExtension.appName)
                             .build()
                     )
                     .addProperty(
                         PropertySpec.builder("VERSION", String::class, KModifier.CONST)
-                            .initializer("%S", project.version.toString())
+                            .initializer("%S", buildConfigKtExtension.version)
                             .build()
                     )
                     .build()
