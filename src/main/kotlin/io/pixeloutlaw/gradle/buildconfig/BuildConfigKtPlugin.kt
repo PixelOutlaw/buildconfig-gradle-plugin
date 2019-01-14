@@ -3,7 +3,7 @@ package io.pixeloutlaw.gradle.buildconfig
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.create
-import org.gradle.kotlin.dsl.getting
+import org.gradle.kotlin.dsl.withType
 import org.jetbrains.kotlin.gradle.dsl.KotlinJvmProjectExtension
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
@@ -23,7 +23,7 @@ class BuildConfigKtPlugin : Plugin<Project> {
                 target.extensions.findByType(KotlinJvmProjectExtension::class.java)!!
                     .sourceSets.findByName("main")
                     ?.kotlin?.srcDir(BuildConfigUtils.getRootOutputPath(target.buildDir.toPath()))
-                target.tasks.getting(KotlinCompile::class) {
+                target.tasks.withType<KotlinCompile>().configureEach {
                     dependsOn("generateBuildConfigKt")
                 }
             }
