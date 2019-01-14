@@ -1,4 +1,4 @@
-import org.gradle.api.tasks.testing.logging.TestLogEvent
+
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
@@ -11,13 +11,36 @@ plugins {
     id("com.gradle.plugin-publish") version Versions.com_gradle_plugin_publish_gradle_plugin
     id("pl.allegro.tech.build.axion-release") version Versions.pl_allegro_tech_build_axion_release_gradle_plugin
     id("com.diffplug.gradle.spotless") version Versions.com_diffplug_gradle_spotless_gradle_plugin
+    id("com.adarshr.test-logger") version Versions.com_adarshr_test_logger_gradle_plugin
 }
 
 group = "io.pixeloutlaw.gradle"
 version = scmVersion.version
 
-repositories {
-    jcenter()
+allprojects {
+    apply(plugin = "com.diffplug.gradle.spotless")
+
+    afterEvaluate {
+        tasks.withType<KotlinCompile>().configureEach {
+            kotlinOptions.jvmTarget = "1.8"
+        }
+        tasks.withType<Test>().configureEach {
+            useJUnitPlatform { }
+        }
+    }
+
+    repositories {
+        jcenter()
+    }
+
+    spotless {
+        kotlin {
+            ktlint()
+        }
+        kotlinGradle {
+            ktlint()
+        }
+    }
 }
 
 gradlePlugin {
@@ -49,15 +72,6 @@ pluginBundle {
     tags = listOf("kotlin", "build", "config", "buildconfig")
 }
 
-tasks.withType<KotlinCompile>().configureEach {
-    kotlinOptions.jvmTarget = "1.8"
-}
-tasks.withType<Test>().configureEach {
-    useJUnitPlatform { }
-    testLogging {
-        events = setOf(TestLogEvent.PASSED, TestLogEvent.SKIPPED, TestLogEvent.FAILED, TestLogEvent.STANDARD_OUT, TestLogEvent.STANDARD_ERROR)
-    }
-}
 tasks.withType<Wrapper>().configureEach {
     gradleVersion = "5.1.1"
 }
@@ -71,13 +85,4 @@ buildScan {
     termsOfServiceUrl = "https://gradle.com/terms-of-service"
     termsOfServiceAgree = "yes"
     publishAlways()
-}
-
-spotless {
-    kotlin {
-        ktlint()
-    }
-    kotlinGradle {
-        ktlint()
-    }
 }

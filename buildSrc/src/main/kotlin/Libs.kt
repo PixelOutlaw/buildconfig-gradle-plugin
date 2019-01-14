@@ -6,6 +6,10 @@ import kotlin.String
  * Update this file with
  *   `$ ./gradlew buildSrcVersions` */
 object Libs {
+    const val com_adarshr_test_logger_gradle_plugin: String =
+            "com.adarshr.test-logger:com.adarshr.test-logger.gradle.plugin:" +
+            Versions.com_adarshr_test_logger_gradle_plugin
+
     const val com_diffplug_gradle_spotless_gradle_plugin: String =
             "com.diffplug.gradle.spotless:com.diffplug.gradle.spotless.gradle.plugin:" +
             Versions.com_diffplug_gradle_spotless_gradle_plugin

@@ -4,6 +4,7 @@ import org.gradle.testkit.runner.GradleRunner
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.extension.ExtendWith
 import org.junitpioneer.jupiter.TempDirectory
+import org.junitpioneer.jupiter.TempDirectory.TempDir
 import java.io.File
 import java.nio.file.Path
 import kotlin.test.assertTrue
@@ -11,7 +12,7 @@ import kotlin.test.assertTrue
 class GenerateBuildConfigKtTaskTest {
     @ExtendWith(TempDirectory::class)
     @Test
-    fun doesGenerateBuildConfigKtTaskCreateBuildConfigKt(@TempDirectory.TempDir tempDir: Path) {
+    fun doesGenerateBuildConfigKtTaskCreateBuildConfigKt(@TempDir tempDir: Path) {
         setupBuildGradle(tempDir)
         setupSettingsGradle(tempDir, "test")
         GradleRunner.create()
@@ -26,7 +27,7 @@ class GenerateBuildConfigKtTaskTest {
 
     @ExtendWith(TempDirectory::class)
     @Test
-    fun doesGenerateBuildConfigKtTaskCreateBuildConfigKtForDotName(@TempDirectory.TempDir tempDir: Path) {
+    fun doesGenerateBuildConfigKtTaskCreateBuildConfigKtForDotName(@TempDir tempDir: Path) {
         setupBuildGradle(tempDir)
         setupSettingsGradle(tempDir, "test.test")
         GradleRunner.create()
@@ -41,7 +42,7 @@ class GenerateBuildConfigKtTaskTest {
 
     @ExtendWith(TempDirectory::class)
     @Test
-    fun doesGenerateBuildConfigKtTaskCreateBuildConfigKtForHyphen(@TempDirectory.TempDir tempDir: Path) {
+    fun doesGenerateBuildConfigKtTaskCreateBuildConfigKtForHyphen(@TempDir tempDir: Path) {
         setupBuildGradle(tempDir)
         setupSettingsGradle(tempDir, "test-test")
         GradleRunner.create()
