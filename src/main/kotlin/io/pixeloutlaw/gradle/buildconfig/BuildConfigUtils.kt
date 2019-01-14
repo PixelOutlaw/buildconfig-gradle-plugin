@@ -17,8 +17,7 @@ object BuildConfigUtils {
         return Paths.get(".", *packageNameSplit)
     }
 
-    fun getFileOutputPath(projectBuildDir: Path, groupId: Any, artifactId: Any): Path {
-        val packageName = convertGavToPackageName(groupId, artifactId)
+    fun getFileOutputPath(projectBuildDir: Path, packageName: String): Path {
         return getRootOutputPath(projectBuildDir).resolve(convertPackageNameToPath(packageName)).resolve("BuildConfig.kt")
     }
 }

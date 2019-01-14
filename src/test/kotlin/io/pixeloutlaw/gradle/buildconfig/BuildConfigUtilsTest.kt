@@ -39,7 +39,7 @@ class BuildConfigUtilsTest {
     fun doesGetFileOutputPathReturnTemplatedStringForPath() {
         assertEquals(
             currentPath.resolve("generated/source/buildConfig/./dank/memes/dude/BuildConfig.kt"),
-            BuildConfigUtils.getFileOutputPath(currentPath, "dank.memes", "dude")
+            BuildConfigUtils.getFileOutputPath(currentPath, "dank.memes.dude")
         )
     }
 }

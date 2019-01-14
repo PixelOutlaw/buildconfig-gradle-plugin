@@ -50,7 +50,7 @@ open class GenerateBuildConfigKtTask : DefaultTask() {
         logger.debug(
             "Wrote \"{}\" to {}",
             fileOutput,
-            BuildConfigUtils.getFileOutputPath(project.buildDir.toPath(), project.group, project.name)
+            BuildConfigUtils.getFileOutputPath(project.buildDir.toPath(), packageName)
         )
     }
 }

@@ -9,24 +9,20 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 class BuildConfigKtPlugin : Plugin<Project> {
     override fun apply(target: Project) {
-        // afterEvaluate required to get access to project internals
-        target.afterEvaluate {
-            if (target.plugins.hasPlugin("org.jetbrains.kotlin.jvm")) {
-                target.logger.info("Registering buildConfigKt extension...")
-                target.extensions.create<BuildConfigKtExtension>(
-                    "buildConfigKt",
-                    target
-                )
-                target.logger.info("Registering generateBuildConfigKt task...")
-                target.tasks.register("generateBuildConfigKt", GenerateBuildConfigKtTask::class.java)
-                target.logger.info("Adding buildConfigKt generated directory to Kotlin src...")
-                target.extensions.findByType(KotlinJvmProjectExtension::class.java)!!
-                    .sourceSets.findByName("main")
-                    ?.kotlin?.srcDir(BuildConfigUtils.getRootOutputPath(target.buildDir.toPath()))
-                target.tasks.withType<KotlinCompile>().configureEach {
-                    dependsOn("generateBuildConfigKt")
-                }
-            }
+        target.logger.info("Creating buildConfigKt extension...")
+        target.extensions.create<BuildConfigKtExtension>(
+            "buildConfigKt",
+            target
+        )
+        target.logger.info("Registering generateBuildConfigKt task...")
+        target.tasks.register("generateBuildConfigKt", GenerateBuildConfigKtTask::class.java)
+        target.logger.info("Adding buildConfigKt generated directory to Kotlin src (if it exists)...")
+        target.extensions.findByType(KotlinJvmProjectExtension::class.java)
+            ?.sourceSets?.findByName("main")
+            ?.kotlin?.srcDir(BuildConfigUtils.getRootOutputPath(target.buildDir.toPath()))
+        target.logger.info("Adding 'generateBuildConfigKt' to Kotlin compilation tasks (if any exist)...")
+        target.tasks.withType<KotlinCompile>().configureEach {
+            dependsOn("generateBuildConfigKt")
         }
     }
 }
