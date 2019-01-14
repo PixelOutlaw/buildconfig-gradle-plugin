@@ -1,35 +1,65 @@
 package io.pixeloutlaw.gradle.buildconfig
 
-import org.gradle.kotlin.dsl.apply
-import org.gradle.testfixtures.ProjectBuilder
-import org.jetbrains.kotlin.gradle.plugin.KotlinPlatformJvmPlugin
+import org.gradle.testkit.runner.GradleRunner
 import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.extension.ExtendWith
+import org.junitpioneer.jupiter.TempDirectory
+import org.junitpioneer.jupiter.TempDirectory.TempDir
+import java.io.File
+import java.nio.file.Path
+import kotlin.test.assertFalse
 import kotlin.test.assertNotNull
-import kotlin.test.assertNull
+import kotlin.test.assertTrue
 
 class BuildConfigKtPluginTest {
+    @ExtendWith(TempDirectory::class)
     @Test
-    fun doesBuildConfigPluginNotAddGenerateBuildConfigKtTaskWithoutKotlinPlugin() {
-        val project = ProjectBuilder.builder().build()
-        with(project) {
-            this.pluginManager.apply(BuildConfigKtPlugin::class)
+    fun doesBuildConfigPluginNotAddGenerateBuildConfigKtTaskWithoutKotlinPlugin(@TempDir tempDir: Path) {
+        File(tempDir.toFile(), "build.gradle.kts").run {
+            writeText(
+                """
+                plugins {
+                    id("io.pixeloutlaw.gradle.buildconfigkt")
+                }
 
-            this.afterEvaluate {
-                assertNull(this.tasks.findByName("generateBuildConfigKt"))
-            }
+                group = "io.pixeloutlaw.gradle"
+                version = "420.0.0-SNAPSHOT"
+            """.trimIndent()
+            )
+        }
+        val buildResult = GradleRunner.create()
+            .withProjectDir(tempDir.toFile())
+            .withArguments("tasks", "--all")
+            .withPluginClasspath()
+            .build()
+        assertNotNull(buildResult.output) {
+            assertFalse(it.contains("generateBuildConfigKt"))
         }
     }
 
+    @ExtendWith(TempDirectory::class)
     @Test
-    fun doesBuildConfigPluginAddGenerateBuildConfigKtTaskWithKotlinPlugin() {
-        val project = ProjectBuilder.builder().build()
-        with(project) {
-            this.pluginManager.apply(KotlinPlatformJvmPlugin::class)
-            this.pluginManager.apply(BuildConfigKtPlugin::class)
+    fun doesBuildConfigPluginAddGenerateBuildConfigKtTaskWithKotlinPlugin(@TempDir tempDir: Path) {
+        File(tempDir.toFile(), "build.gradle.kts").run {
+            writeText(
+                """
+                plugins {
+                    id("io.pixeloutlaw.gradle.buildconfigkt")
+                    id("org.jetbrains.kotlin.jvm") version "1.3.10"
+                }
 
-            this.afterEvaluate {
-                assertNotNull(this.tasks.findByName("generateBuildConfigKt"))
-            }
+                group = "io.pixeloutlaw.gradle"
+                version = "420.0.0-SNAPSHOT"
+            """.trimIndent()
+            )
+        }
+        val buildResult = GradleRunner.create()
+            .withProjectDir(tempDir.toFile())
+            .withArguments("tasks", "--all")
+            .withPluginClasspath()
+            .build()
+        assertNotNull(buildResult.output) {
+            assertTrue(it.contains("generateBuildConfigKt"))
         }
     }
 }
