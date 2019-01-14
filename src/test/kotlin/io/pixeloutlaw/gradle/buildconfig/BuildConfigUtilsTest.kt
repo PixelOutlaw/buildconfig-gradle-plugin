@@ -16,6 +16,16 @@ class BuildConfigUtilsTest {
     }
 
     @Test
+    fun doesCovertGavToPackageNameReturnStartingWithNoDotForEmptyPackage() {
+        assertEquals("dude", BuildConfigUtils.convertGavToPackageName("", "dude"))
+    }
+
+    @Test
+    fun doesCovertGavToPackageNameReturnStartingWithNoDotForSpacePackage() {
+        assertEquals("dude", BuildConfigUtils.convertGavToPackageName(" ", "dude"))
+    }
+
+    @Test
     fun doesConvertGavToPackageNameReturnTemplatedString() {
         assertEquals("dank.memes.dude", BuildConfigUtils.convertGavToPackageName("dank.memes", "dude"))
     }

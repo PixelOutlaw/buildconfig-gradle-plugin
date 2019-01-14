@@ -10,6 +10,7 @@ object BuildConfigUtils {
 
     fun convertGavToPackageName(groupId: Any, artifactId: Any): String {
         return "$groupId.${artifactId.toString().replace("-", "_").replace(".", "_")}"
+            .trim().trim('.')
     }
 
     fun convertPackageNameToPath(packageName: String): Path {
