@@ -13,7 +13,12 @@ class BuildConfigKtPlugin : Plugin<Project> {
         target.afterEvaluate {
             if (this.plugins.hasPlugin("org.jetbrains.kotlin.jvm")) {
                 this.logger.info("Registering buildConfigKt extension...")
-                this.extensions.create<BuildConfigKtExtension>("buildConfigKt", target.name, target.version, target.group)
+                this.extensions.create<BuildConfigKtExtension>(
+                    "buildConfigKt",
+                    target.name,
+                    target.version,
+                    target.group
+                )
                 this.logger.info("Registering generateBuildConfigKt task...")
                 this.tasks.register("generateBuildConfigKt", GenerateBuildConfigKtTask::class.java)
                 this.logger.info("Adding buildConfigKt generated directory to Kotlin src...")
