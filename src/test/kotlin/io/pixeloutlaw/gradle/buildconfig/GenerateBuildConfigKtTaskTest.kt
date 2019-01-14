@@ -55,12 +55,12 @@ class GenerateBuildConfigKtTaskTest {
     }
 
     private fun setupBuildGradle(tempDir: Path) {
-        File(tempDir.toFile(), "build.gradle").run {
+        File(tempDir.toFile(), "build.gradle.kts").run {
             writeText(
                 """
                     plugins {
                         id("io.pixeloutlaw.gradle.buildconfigkt")
-                        id "org.jetbrains.kotlin.jvm" version "1.3.10"
+                        id("org.jetbrains.kotlin.jvm") version "1.3.11"
                     }
 
                     group = "io.pixeloutlaw.gradle"
@@ -71,7 +71,7 @@ class GenerateBuildConfigKtTaskTest {
     }
 
     private fun setupSettingsGradle(tempDir: Path, name: String) {
-        File(tempDir.toFile(), "settings.gradle").run {
+        File(tempDir.toFile(), "settings.gradle.kts").run {
             writeText(
                 """
                     rootProject.name = "$name"
