@@ -1,4 +1,3 @@
-
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
@@ -26,6 +25,7 @@ allprojects {
         }
         tasks.withType<Test>().configureEach {
             useJUnitPlatform { }
+            systemProperty("current.gradle.version", System.getenv("GRADLE_CURRENT_VERSION") ?: gradle.gradleVersion)
         }
     }
 

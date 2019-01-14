@@ -12,6 +12,8 @@ import kotlin.test.assertNotNull
 import kotlin.test.assertTrue
 
 class BuildConfigKtPluginTest {
+    val gradleVersion: String = System.getProperty("current.gradle.version")
+
     @ExtendWith(TempDirectory::class)
     @Test
     fun doesBuildConfigPluginNotAddGenerateBuildConfigKtTaskWithoutKotlinPlugin(@TempDir tempDir: Path) {
@@ -28,6 +30,7 @@ class BuildConfigKtPluginTest {
             )
         }
         val buildResult = GradleRunner.create()
+            .withGradleVersion(gradleVersion)
             .withProjectDir(tempDir.toFile())
             .withArguments("tasks", "--all")
             .withPluginClasspath()
@@ -54,6 +57,7 @@ class BuildConfigKtPluginTest {
             )
         }
         val buildResult = GradleRunner.create()
+            .withGradleVersion(gradleVersion)
             .withProjectDir(tempDir.toFile())
             .withArguments("tasks", "--all")
             .withPluginClasspath()
@@ -80,6 +84,7 @@ class BuildConfigKtPluginTest {
             )
         }
         val buildResult = GradleRunner.create()
+            .withGradleVersion(gradleVersion)
             .withProjectDir(tempDir.toFile())
             .withArguments("tasks", "--all")
             .withPluginClasspath()

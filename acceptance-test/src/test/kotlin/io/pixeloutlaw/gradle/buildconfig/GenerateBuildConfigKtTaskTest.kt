@@ -10,12 +10,15 @@ import java.nio.file.Path
 import kotlin.test.assertTrue
 
 class GenerateBuildConfigKtTaskTest {
+    val gradleVersion: String = System.getProperty("current.gradle.version")
+
     @ExtendWith(TempDirectory::class)
     @Test
     fun doesGenerateBuildConfigKtTaskCreateBuildConfigKt(@TempDir tempDir: Path) {
         setupBuildGradle(tempDir)
         setupSettingsGradle(tempDir, "test")
         GradleRunner.create()
+            .withGradleVersion(gradleVersion)
             .withProjectDir(tempDir.toFile())
             .withArguments("generateBuildConfigKt")
             .withPluginClasspath()
@@ -31,6 +34,7 @@ class GenerateBuildConfigKtTaskTest {
         setupBuildGradle(tempDir)
         setupSettingsGradle(tempDir, "test.test")
         GradleRunner.create()
+            .withGradleVersion(gradleVersion)
             .withProjectDir(tempDir.toFile())
             .withArguments("generateBuildConfigKt")
             .withPluginClasspath()
@@ -46,6 +50,7 @@ class GenerateBuildConfigKtTaskTest {
         setupBuildGradle(tempDir)
         setupSettingsGradle(tempDir, "test-test")
         GradleRunner.create()
+            .withGradleVersion(gradleVersion)
             .withProjectDir(tempDir.toFile())
             .withArguments("generateBuildConfigKt")
             .withPluginClasspath()
