@@ -22,8 +22,10 @@ repositories {
 
 gradlePlugin {
     plugins {
-        register("buildconfigkt") {
+        create("buildConfigKt") {
             id = "io.pixeloutlaw.gradle.buildconfigkt"
+            displayName = "buildConfigKt"
+            description = "Painless build metadata available at runtime"
             implementationClass = "io.pixeloutlaw.gradle.buildconfig.BuildConfigKtPlugin"
         }
     }
@@ -44,15 +46,7 @@ dependencies {
 pluginBundle {
     website = "https://github.com/PixelOutlaw/buildconfig-gradle-plugin"
     vcsUrl = "https://github.com/PixelOutlaw/buildconfig-gradle-plugin"
-
-    description = "Generates a BuildConfig.kt class."
-
-    (plugins) {
-        "buildconfigkt" {
-            displayName = "BuildConfigKt"
-            tags = listOf("kotlin", "build", "config", "buildconfig")
-        }
-    }
+    tags = listOf("kotlin", "build", "config", "buildconfig")
 }
 
 tasks.withType<KotlinCompile>().configureEach {
