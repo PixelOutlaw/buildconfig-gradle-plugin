@@ -35,34 +35,6 @@ class BuildConfigKtPluginTest {
         assertNotNull(buildResult.output) {
             assertFalse(it.contains("generateBuildConfigKt"))
         }
-        println(buildResult.output)
-    }
-
-    @ExtendWith(TempDirectory::class)
-    @Test
-    fun doesBuildConfigPluginNotAddGenerateBuildConfigKtTaskWithKotlinPluginDefinedAfter(@TempDir tempDir: Path) {
-        File(tempDir.toFile(), "build.gradle.kts").run {
-            writeText(
-                """
-                plugins {
-                    id("io.pixeloutlaw.gradle.buildconfigkt")
-                    id("org.jetbrains.kotlin.jvm") version "1.3.11"
-                }
-
-                group = "io.pixeloutlaw.gradle"
-                version = "420.0.0-SNAPSHOT"
-            """.trimIndent()
-            )
-        }
-        val buildResult = GradleRunner.create()
-            .withProjectDir(tempDir.toFile())
-            .withArguments("tasks", "--all")
-            .withPluginClasspath()
-            .build()
-        assertNotNull(buildResult.output) {
-            assertFalse(it.contains("generateBuildConfigKt"))
-        }
-        println(buildResult.output)
     }
 
     @ExtendWith(TempDirectory::class)
@@ -89,6 +61,31 @@ class BuildConfigKtPluginTest {
         assertNotNull(buildResult.output) {
             assertTrue(it.contains("generateBuildConfigKt"))
         }
-        println(buildResult.output)
+    }
+
+    @ExtendWith(TempDirectory::class)
+    @Test
+    fun doesBuildConfigPluginAddGenerateBuildConfigKtTaskWithKotlinPluginDefinedAfter(@TempDir tempDir: Path) {
+        File(tempDir.toFile(), "build.gradle.kts").run {
+            writeText(
+                """
+                plugins {
+                    id("io.pixeloutlaw.gradle.buildconfigkt")
+                    id("org.jetbrains.kotlin.jvm") version "1.3.11"
+                }
+
+                group = "io.pixeloutlaw.gradle"
+                version = "420.0.0-SNAPSHOT"
+            """.trimIndent()
+            )
+        }
+        val buildResult = GradleRunner.create()
+            .withProjectDir(tempDir.toFile())
+            .withArguments("tasks", "--all")
+            .withPluginClasspath()
+            .build()
+        assertNotNull(buildResult.output) {
+            assertTrue(it.contains("generateBuildConfigKt"))
+        }
     }
 }
