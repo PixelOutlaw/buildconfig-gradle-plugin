@@ -24,7 +24,7 @@ class GenerateBuildConfigKtTaskTest {
             .withPluginClasspath()
             .build()
         val buildConfigFile =
-            File(tempDir.toFile(), "build/generated/source/buildConfig/io/pixeloutlaw/gradle/test/BuildConfig.kt")
+            File(tempDir.toFile(), "build/generated/source/buildConfigKt/io/pixeloutlaw/gradle/test/BuildConfig.kt")
         assertTrue(buildConfigFile.exists())
     }
 
@@ -40,7 +40,7 @@ class GenerateBuildConfigKtTaskTest {
             .withPluginClasspath()
             .build()
         val buildConfigFile =
-            File(tempDir.toFile(), "build/generated/source/buildConfig/io/pixeloutlaw/gradle/test_test/BuildConfig.kt")
+            File(tempDir.toFile(), "build/generated/source/buildConfigKt/io/pixeloutlaw/gradle/test_test/BuildConfig.kt")
         assertTrue(buildConfigFile.exists())
     }
 
@@ -56,7 +56,7 @@ class GenerateBuildConfigKtTaskTest {
             .withPluginClasspath()
             .build()
         val buildConfigFile =
-            File(tempDir.toFile(), "build/generated/source/buildConfig/io/pixeloutlaw/gradle/test_test/BuildConfig.kt")
+            File(tempDir.toFile(), "build/generated/source/buildConfigKt/io/pixeloutlaw/gradle/test_test/BuildConfig.kt")
         assertTrue(buildConfigFile.exists())
     }
 
