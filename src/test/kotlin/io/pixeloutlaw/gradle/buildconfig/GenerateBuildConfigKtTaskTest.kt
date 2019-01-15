@@ -2,6 +2,7 @@ package io.pixeloutlaw.gradle.buildconfig
 
 import com.squareup.kotlinpoet.TypeSpec
 import org.gradle.api.Project
+import org.gradle.api.internal.project.ProjectInternal
 import org.gradle.kotlin.dsl.apply
 import org.gradle.kotlin.dsl.getByName
 import org.gradle.kotlin.dsl.getByType
@@ -24,6 +25,7 @@ class GenerateBuildConfigKtTaskTest {
         project.version = "4.2.0"
         project.pluginManager.apply(KotlinPlatformJvmPlugin::class)
         project.pluginManager.apply(BuildConfigKtPlugin::class)
+        (project as ProjectInternal).evaluate() // force the project to evaluate so we can get tasks
         generateBuildConfigKtTask = project.tasks.getByName("generateBuildConfigKt", GenerateBuildConfigKtTask::class)
         buildConfigKtExtension = project.extensions.getByType(BuildConfigKtExtension::class)
     }
