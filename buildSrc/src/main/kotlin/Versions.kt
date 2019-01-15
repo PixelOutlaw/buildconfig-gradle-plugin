@@ -29,6 +29,8 @@ object Versions {
 
     const val org_junit_jupiter: String = "5.3.1" // available: "5.3.2"
 
+    const val mockito_junit_jupiter: String = "2.23.4" 
+
     const val pl_allegro_tech_build_axion_release_gradle_plugin: String = "1.10.0" 
 
     /**

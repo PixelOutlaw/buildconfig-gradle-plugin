@@ -83,6 +83,11 @@ object Libs {
     const val junit_jupiter_engine: String = "org.junit.jupiter:junit-jupiter-engine:" +
             Versions.org_junit_jupiter
 
+    /**
+     * https://github.com/mockito/mockito */
+    const val mockito_junit_jupiter: String = "org.mockito:mockito-junit-jupiter:" +
+            Versions.mockito_junit_jupiter
+
     const val pl_allegro_tech_build_axion_release_gradle_plugin: String =
             "pl.allegro.tech.build.axion-release:pl.allegro.tech.build.axion-release.gradle.plugin:" +
             Versions.pl_allegro_tech_build_axion_release_gradle_plugin

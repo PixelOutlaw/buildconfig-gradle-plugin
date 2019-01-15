@@ -12,10 +12,11 @@ import org.gradle.kotlin.dsl.getByType
 import java.io.File
 
 open class GenerateBuildConfigKtTask : DefaultTask() {
-    @OutputDirectory
-    val output: File = project.file(
-        BuildConfigUtils.getRootOutputPath(project.buildDir.toPath())
-    )
+    private val output: File by lazy {
+        project.file(
+            BuildConfigUtils.getRootOutputPath(project.buildDir.toPath())
+        )
+    }
 
     init {
         description = "Generates a BuildConfig.kt with build information"
@@ -24,33 +25,30 @@ open class GenerateBuildConfigKtTask : DefaultTask() {
     @TaskAction
     fun generateBuildConfig() {
         val buildConfigKtExtension = project.extensions.getByType(BuildConfigKtExtension::class)
-        val packageName = buildConfigKtExtension.packageName
+        val fileSpec = buildFileSpec(buildConfigKtExtension)
+        output.mkdirs()
+        fileSpec.writeTo(output)
+    }
+
+    internal fun buildFileSpec(buildConfigKtExtension: BuildConfigKtExtension): FileSpec {
+        val packageName = buildConfigKtExtension.packageNameOrProjectPackageName(project)
         val className = buildConfigKtExtension.className
         val buildConfigClass = ClassName(packageName, className)
-        val file = FileSpec.builder(packageName, className)
+        return FileSpec.builder(packageName, className)
             .addType(
                 TypeSpec.objectBuilder(buildConfigClass)
                     .addProperty(
                         PropertySpec.builder("NAME", String::class, KModifier.CONST)
-                            .initializer("%S", buildConfigKtExtension.appName)
+                            .initializer("%S", buildConfigKtExtension.appNameOrProjectName(project))
                             .build()
                     )
                     .addProperty(
                         PropertySpec.builder("VERSION", String::class, KModifier.CONST)
-                            .initializer("%S", buildConfigKtExtension.version)
+                            .initializer("%S", buildConfigKtExtension.versionOrProjectVersion(project))
                             .build()
                     )
                     .build()
             )
             .build()
-        output.mkdirs()
-        val fileOutput = StringBuilder()
-        file.writeTo(fileOutput)
-        file.writeTo(output)
-        logger.debug(
-            "Wrote \"{}\" to {}",
-            fileOutput,
-            BuildConfigUtils.getFileOutputPath(project.buildDir.toPath(), packageName)
-        )
     }
 }
