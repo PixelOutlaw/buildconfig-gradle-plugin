@@ -11,15 +11,21 @@ class BuildConfigKtPlugin : Plugin<Project> {
     override fun apply(target: Project) {
         target.logger.info("Creating buildConfigKt extension...")
         target.extensions.create<BuildConfigKtExtension>("buildConfigKt")
-        target.logger.info("Registering generateBuildConfigKt task...")
-        target.tasks.register("generateBuildConfigKt", GenerateBuildConfigKtTask::class.java)
-        target.logger.info("Adding buildConfigKt generated directory to Kotlin src (if it exists)...")
-        target.extensions.findByType(KotlinJvmProjectExtension::class.java)
-            ?.sourceSets?.findByName("main")
-            ?.kotlin?.srcDir(BuildConfigUtils.getRootOutputPath(target.buildDir.toPath()))
-        target.logger.info("Adding 'generateBuildConfigKt' to Kotlin compilation tasks (if any exist)...")
-        target.tasks.withType<KotlinCompile>().configureEach {
-            dependsOn("generateBuildConfigKt")
+
+        // we need to use afterEvaluate in case the Kotlin plugin is applied after we're applied
+        target.afterEvaluate {
+            if (plugins.hasPlugin("org.jetbrains.kotlin.jvm")) {
+                logger.info("Registering generateBuildConfigKt task...")
+                tasks.register("generateBuildConfigKt", GenerateBuildConfigKtTask::class.java)
+                logger.info("Adding buildConfigKt generated directory to Kotlin src...")
+                extensions.findByType(KotlinJvmProjectExtension::class.java)
+                    ?.sourceSets?.findByName("main")
+                    ?.kotlin?.srcDir(BuildConfigUtils.getRootOutputPath(target.buildDir.toPath()))
+                logger.info("Adding 'generateBuildConfigKt' as a dependency for Kotlin compilation tasks...")
+                tasks.withType<KotlinCompile>().configureEach {
+                    dependsOn("generateBuildConfigKt")
+                }
+            }
         }
     }
 }
