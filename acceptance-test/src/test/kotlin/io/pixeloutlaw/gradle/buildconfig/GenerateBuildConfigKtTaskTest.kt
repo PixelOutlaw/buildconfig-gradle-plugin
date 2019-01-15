@@ -14,7 +14,7 @@ class GenerateBuildConfigKtTaskTest {
 
     @ExtendWith(TempDirectory::class)
     @Test
-    fun doesGenerateBuildConfigKtTaskCreateBuildConfigKt(@TempDir tempDir: Path) {
+    fun doesGenerateBuildConfigKtTaskCreateBuildConfigKtWithDefaultConfiguration(@TempDir tempDir: Path) {
         setupBuildGradle(tempDir)
         setupSettingsGradle(tempDir, "test")
         GradleRunner.create()
@@ -30,7 +30,27 @@ class GenerateBuildConfigKtTaskTest {
 
     @ExtendWith(TempDirectory::class)
     @Test
-    fun doesGenerateBuildConfigKtTaskCreateBuildConfigKtForDotName(@TempDir tempDir: Path) {
+    fun doesGenerateBuildConfigKtTaskCreateBuildConfigKtWithModifiedConfiguration(@TempDir tempDir: Path) {
+        setupBuildGradle(tempDir, """
+            buildConfigKt {
+                className = "DankMemes"
+            }
+        """.trimIndent())
+        setupSettingsGradle(tempDir, "test")
+        GradleRunner.create()
+            .withGradleVersion(gradleVersion)
+            .withProjectDir(tempDir.toFile())
+            .withArguments("generateBuildConfigKt")
+            .withPluginClasspath()
+            .build()
+        val buildConfigFile =
+            File(tempDir.toFile(), "build/generated/source/buildConfigKt/io/pixeloutlaw/gradle/test/DankMemes.kt")
+        assertTrue(buildConfigFile.exists())
+    }
+
+    @ExtendWith(TempDirectory::class)
+    @Test
+    fun doesGenerateBuildConfigKtTaskCreateBuildConfigKtForDotNameWithDefaultConfiguration(@TempDir tempDir: Path) {
         setupBuildGradle(tempDir)
         setupSettingsGradle(tempDir, "test.test")
         GradleRunner.create()
@@ -46,7 +66,27 @@ class GenerateBuildConfigKtTaskTest {
 
     @ExtendWith(TempDirectory::class)
     @Test
-    fun doesGenerateBuildConfigKtTaskCreateBuildConfigKtForHyphen(@TempDir tempDir: Path) {
+    fun doesGenerateBuildConfigKtTaskCreateBuildConfigKtForDotNameWithModifiedConfiguration(@TempDir tempDir: Path) {
+        setupBuildGradle(tempDir, """
+            buildConfigKt {
+                className = "DankMemes"
+            }
+        """.trimIndent())
+        setupSettingsGradle(tempDir, "test.test")
+        GradleRunner.create()
+            .withGradleVersion(gradleVersion)
+            .withProjectDir(tempDir.toFile())
+            .withArguments("generateBuildConfigKt")
+            .withPluginClasspath()
+            .build()
+        val buildConfigFile =
+            File(tempDir.toFile(), "build/generated/source/buildConfigKt/io/pixeloutlaw/gradle/test_test/DankMemes.kt")
+        assertTrue(buildConfigFile.exists())
+    }
+
+    @ExtendWith(TempDirectory::class)
+    @Test
+    fun doesGenerateBuildConfigKtTaskCreateBuildConfigKtForHyphenWithDefaultConfiguration(@TempDir tempDir: Path) {
         setupBuildGradle(tempDir)
         setupSettingsGradle(tempDir, "test-test")
         GradleRunner.create()
@@ -60,7 +100,27 @@ class GenerateBuildConfigKtTaskTest {
         assertTrue(buildConfigFile.exists())
     }
 
-    private fun setupBuildGradle(tempDir: Path) {
+    @ExtendWith(TempDirectory::class)
+    @Test
+    fun doesGenerateBuildConfigKtTaskCreateBuildConfigKtForHyphenWithModifiedConfiguration(@TempDir tempDir: Path) {
+        setupBuildGradle(tempDir, """
+            buildConfigKt {
+                className = "DankMemes"
+            }
+        """.trimIndent())
+        setupSettingsGradle(tempDir, "test-test")
+        GradleRunner.create()
+            .withGradleVersion(gradleVersion)
+            .withProjectDir(tempDir.toFile())
+            .withArguments("generateBuildConfigKt")
+            .withPluginClasspath()
+            .build()
+        val buildConfigFile =
+            File(tempDir.toFile(), "build/generated/source/buildConfigKt/io/pixeloutlaw/gradle/test_test/DankMemes.kt")
+        assertTrue(buildConfigFile.exists())
+    }
+
+    private fun setupBuildGradle(tempDir: Path, extraGradleConfig: String = "") {
         File(tempDir.toFile(), "build.gradle.kts").run {
             writeText(
                 """
@@ -68,6 +128,8 @@ class GenerateBuildConfigKtTaskTest {
                         id("org.jetbrains.kotlin.jvm") version "1.3.11"
                         id("io.pixeloutlaw.gradle.buildconfigkt")
                     }
+
+                    $extraGradleConfig
 
                     group = "io.pixeloutlaw.gradle"
                     version = "420.0.0-SNAPSHOT"
