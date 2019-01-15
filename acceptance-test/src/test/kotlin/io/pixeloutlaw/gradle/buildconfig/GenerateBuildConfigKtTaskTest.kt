@@ -10,7 +10,7 @@ import java.nio.file.Path
 import kotlin.test.assertTrue
 
 class GenerateBuildConfigKtTaskTest {
-    val gradleVersion: String = System.getProperty("current.gradle.version")
+    private val gradleVersion: String = System.getProperty("current.gradle.version")
 
     @ExtendWith(TempDirectory::class)
     @Test

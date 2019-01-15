@@ -12,7 +12,7 @@ import kotlin.test.assertNotNull
 import kotlin.test.assertTrue
 
 class BuildConfigKtPluginTest {
-    val gradleVersion: String = System.getProperty("current.gradle.version")
+    private val gradleVersion: String = System.getProperty("current.gradle.version")
 
     @ExtendWith(TempDirectory::class)
     @Test
