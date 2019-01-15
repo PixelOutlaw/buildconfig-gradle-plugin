@@ -21,6 +21,7 @@ allprojects {
 
     afterEvaluate {
         tasks.withType<KotlinCompile>().configureEach {
+            dependsOn("spotlessApply")
             kotlinOptions.jvmTarget = "1.8"
         }
         tasks.withType<Test>().configureEach {
