@@ -1,10 +1,11 @@
 language: java
-before_install:
-  - cd composite && chmod a+x ./gradlew
-install:
-  - cd composite && ./gradlew assemble
+cache:
+  directories:
+    - $HOME/.gradle
+before_script:
+  - chmod a+x ./composite/gradlew
 script:
-  - cd composite && ./gradlew check
+  - cd composite && ./gradlew checkAll
 env:
   - GRADLE_CURRENT_VERSION=5.1.1
   - GRADLE_CURRENT_VERSION=5.0
