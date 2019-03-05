@@ -9,10 +9,10 @@ import java.io.File
 import java.nio.file.Path
 import kotlin.test.assertTrue
 
+@ExtendWith(TempDirectory::class)
 class GenerateBuildConfigKtTaskTest {
     private val gradleVersion: String = System.getProperty("current.gradle.version")
 
-    @ExtendWith(TempDirectory::class)
     @Test
     fun doesGenerateBuildConfigKtTaskCreateBuildConfigKtWithDefaultConfiguration(@TempDir tempDir: Path) {
         setupBuildGradle(tempDir)
@@ -28,7 +28,6 @@ class GenerateBuildConfigKtTaskTest {
         assertTrue(buildConfigFile.exists())
     }
 
-    @ExtendWith(TempDirectory::class)
     @Test
     fun doesGenerateBuildConfigKtTaskCreateBuildConfigKtWithModifiedConfiguration(@TempDir tempDir: Path) {
         setupBuildGradle(tempDir, """
@@ -48,7 +47,6 @@ class GenerateBuildConfigKtTaskTest {
         assertTrue(buildConfigFile.exists())
     }
 
-    @ExtendWith(TempDirectory::class)
     @Test
     fun doesGenerateBuildConfigKtTaskCreateBuildConfigKtForDotNameWithDefaultConfiguration(@TempDir tempDir: Path) {
         setupBuildGradle(tempDir)
@@ -64,7 +62,6 @@ class GenerateBuildConfigKtTaskTest {
         assertTrue(buildConfigFile.exists())
     }
 
-    @ExtendWith(TempDirectory::class)
     @Test
     fun doesGenerateBuildConfigKtTaskCreateBuildConfigKtForDotNameWithModifiedConfiguration(@TempDir tempDir: Path) {
         setupBuildGradle(tempDir, """
@@ -84,7 +81,6 @@ class GenerateBuildConfigKtTaskTest {
         assertTrue(buildConfigFile.exists())
     }
 
-    @ExtendWith(TempDirectory::class)
     @Test
     fun doesGenerateBuildConfigKtTaskCreateBuildConfigKtForHyphenWithDefaultConfiguration(@TempDir tempDir: Path) {
         setupBuildGradle(tempDir)
@@ -100,7 +96,6 @@ class GenerateBuildConfigKtTaskTest {
         assertTrue(buildConfigFile.exists())
     }
 
-    @ExtendWith(TempDirectory::class)
     @Test
     fun doesGenerateBuildConfigKtTaskCreateBuildConfigKtForHyphenWithModifiedConfiguration(@TempDir tempDir: Path) {
         setupBuildGradle(tempDir, """

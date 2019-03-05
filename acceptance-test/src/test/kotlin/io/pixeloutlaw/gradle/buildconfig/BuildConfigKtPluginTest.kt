@@ -11,10 +11,10 @@ import kotlin.test.assertFalse
 import kotlin.test.assertNotNull
 import kotlin.test.assertTrue
 
+@ExtendWith(TempDirectory::class)
 class BuildConfigKtPluginTest {
     private val gradleVersion: String = System.getProperty("current.gradle.version")
 
-    @ExtendWith(TempDirectory::class)
     @Test
     fun doesBuildConfigPluginNotAddGenerateBuildConfigKtTaskWithoutKotlinPlugin(@TempDir tempDir: Path) {
         File(tempDir.toFile(), "build.gradle.kts").run {
@@ -40,7 +40,6 @@ class BuildConfigKtPluginTest {
         }
     }
 
-    @ExtendWith(TempDirectory::class)
     @Test
     fun doesBuildConfigPluginAddGenerateBuildConfigKtTaskWithKotlinPluginDefinedBefore(@TempDir tempDir: Path) {
         File(tempDir.toFile(), "build.gradle.kts").run {
@@ -67,7 +66,6 @@ class BuildConfigKtPluginTest {
         }
     }
 
-    @ExtendWith(TempDirectory::class)
     @Test
     fun doesBuildConfigPluginAddGenerateBuildConfigKtTaskWithKotlinPluginDefinedAfter(@TempDir tempDir: Path) {
         File(tempDir.toFile(), "build.gradle.kts").run {
