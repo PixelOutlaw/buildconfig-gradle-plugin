@@ -1,9 +1,9 @@
 import pl.allegro.tech.build.axion.release.domain.RepositoryConfig
 
 plugins {
-    kotlin("jvm") version "1.3.21"
-    id("de.fayard.buildSrcVersions") version "0.3.2"
-    id("pl.allegro.tech.build.axion-release") version "1.10.0"
+    kotlin("jvm") version Versions.org_jetbrains_kotlin_jvm_gradle_plugin
+    id("de.fayard.buildSrcVersions") version Versions.de_fayard_buildsrcversions_gradle_plugin
+    id("pl.allegro.tech.build.axion-release") version Versions.pl_allegro_tech_build_axion_release_gradle_plugin
     id("io.pixeloutlaw.gradle.buildconfigkt")
 }
 
@@ -14,7 +14,7 @@ repositories {
 }
 
 dependencies {
-    implementation(kotlin("stdlib-jdk8"))
+    implementation(Libs.kotlin_stdlib_jdk8)
 }
 
 scmVersion {

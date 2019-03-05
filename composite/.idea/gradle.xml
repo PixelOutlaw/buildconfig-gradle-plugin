@@ -33,7 +33,9 @@
             <option value="$PROJECT_DIR$/../plugin" />
             <option value="$PROJECT_DIR$/../plugin/buildSrc" />
             <option value="$PROJECT_DIR$/../sample-groovy" />
+            <option value="$PROJECT_DIR$/../sample-groovy/buildSrc" />
             <option value="$PROJECT_DIR$/../sample-kotlin" />
+            <option value="$PROJECT_DIR$/../sample-kotlin/buildSrc" />
           </set>
         </option>
         <option name="useQualifiedModuleNames" value="true" />

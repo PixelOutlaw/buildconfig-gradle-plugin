@@ -34,9 +34,10 @@ object Libs {
             "org.gradle.kotlin.kotlin-dsl:org.gradle.kotlin.kotlin-dsl.gradle.plugin:" +
             Versions.org_gradle_kotlin_kotlin_dsl_gradle_plugin
 
-    const val org_jetbrains_kotlin_jvm_gradle_plugin: String =
-            "org.jetbrains.kotlin.jvm:org.jetbrains.kotlin.jvm.gradle.plugin:" +
-            Versions.org_jetbrains_kotlin_jvm_gradle_plugin
+    /**
+     * https://kotlinlang.org/ */
+    const val kotlin_compiler_embeddable: String =
+            "org.jetbrains.kotlin:kotlin-compiler-embeddable:" + Versions.org_jetbrains_kotlin
 
     /**
      * https://kotlinlang.org/ */
@@ -74,12 +75,12 @@ object Libs {
     const val junit_pioneer: String = "org.junit-pioneer:junit-pioneer:" + Versions.junit_pioneer
 
     /**
-     * http://junit.org/junit5/ */
+     * https://junit.org/junit5/ */
     const val junit_jupiter_api: String = "org.junit.jupiter:junit-jupiter-api:" +
             Versions.org_junit_jupiter
 
     /**
-     * http://junit.org/junit5/ */
+     * https://junit.org/junit5/ */
     const val junit_jupiter_engine: String = "org.junit.jupiter:junit-jupiter-engine:" +
             Versions.org_junit_jupiter
 

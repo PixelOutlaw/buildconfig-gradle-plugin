@@ -2,62 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eaa35a50-e46d-4a2c-b02e-e4b2e479626d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../.editorconfig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/.name" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/buildconfig-plugin.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/kotlinScripting.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/kotlinScripting.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings.gradle.kts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../plugin/gradle.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../plugin/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../plugin/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../plugin/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../plugin/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../sample-groovy/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../sample-groovy/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../sample-groovy/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../sample-groovy/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../sample-groovy/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../sample-groovy/settings.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../sample-groovy/src/main/kotlin/io/pixeloutlaw/gradle/SampleGroovy.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.travis.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../.travis.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../acceptance-test/build.gradle.kts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../acceptance-test/settings.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/../plugin/buildSrc/settings.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../acceptance-test/src/test/kotlin/io/pixeloutlaw/gradle/buildconfig/BuildConfigKtPluginTest.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../acceptance-test/src/test/kotlin/io/pixeloutlaw/gradle/buildconfig/GenerateBuildConfigKtTaskTest.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/../plugin/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../buildSrc/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../plugin/buildSrc/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../buildSrc/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/../plugin/buildSrc/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../buildSrc/settings.gradle.kts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../buildSrc/src/main/kotlin/Libs.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../plugin/buildSrc/src/main/kotlin/Libs.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../buildSrc/src/main/kotlin/Versions.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../plugin/buildSrc/src/main/kotlin/Versions.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gradle/wrapper/gradle-wrapper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gradlew" beforeDir="false" afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gradlew.bat" beforeDir="false" afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../settings.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/../plugin/settings.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/kotlin/io/pixeloutlaw/gradle/buildconfig/BuildConfigKtExtension.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../plugin/src/main/kotlin/io/pixeloutlaw/gradle/buildconfig/BuildConfigKtExtension.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/kotlin/io/pixeloutlaw/gradle/buildconfig/BuildConfigKtExtensionExtensions.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../plugin/src/main/kotlin/io/pixeloutlaw/gradle/buildconfig/BuildConfigKtExtensionExtensions.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/kotlin/io/pixeloutlaw/gradle/buildconfig/BuildConfigKtPlugin.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../plugin/src/main/kotlin/io/pixeloutlaw/gradle/buildconfig/BuildConfigKtPlugin.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/kotlin/io/pixeloutlaw/gradle/buildconfig/BuildConfigUtils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../plugin/src/main/kotlin/io/pixeloutlaw/gradle/buildconfig/BuildConfigUtils.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/kotlin/io/pixeloutlaw/gradle/buildconfig/GenerateBuildConfigKtTask.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../plugin/src/main/kotlin/io/pixeloutlaw/gradle/buildconfig/GenerateBuildConfigKtTask.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/test/kotlin/io/pixeloutlaw/gradle/buildconfig/BuildConfigKtExtensionExtensionsTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../plugin/src/test/kotlin/io/pixeloutlaw/gradle/buildconfig/BuildConfigKtExtensionExtensionsTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/test/kotlin/io/pixeloutlaw/gradle/buildconfig/BuildConfigUtilsTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../plugin/src/test/kotlin/io/pixeloutlaw/gradle/buildconfig/BuildConfigUtilsTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/test/kotlin/io/pixeloutlaw/gradle/buildconfig/GenerateBuildConfigKtTaskTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../plugin/src/test/kotlin/io/pixeloutlaw/gradle/buildconfig/GenerateBuildConfigKtTaskTest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeInsightSettings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sample-groovy/buildSrc/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sample-groovy/buildSrc/build.gradle.kts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sample-groovy/buildSrc/settings.gradle.kts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sample-groovy/buildSrc/src/main/kotlin/Libs.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sample-groovy/buildSrc/src/main/kotlin/Versions.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sample-kotlin/buildSrc/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sample-kotlin/buildSrc/build.gradle.kts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sample-kotlin/buildSrc/settings.gradle.kts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sample-kotlin/buildSrc/src/main/kotlin/Libs.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sample-kotlin/buildSrc/src/main/kotlin/Versions.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../plugin/buildSrc/src/main/kotlin/Libs.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../plugin/buildSrc/src/main/kotlin/Libs.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../plugin/buildSrc/src/main/kotlin/Versions.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../plugin/buildSrc/src/main/kotlin/Versions.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sample-groovy/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../sample-groovy/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sample-kotlin/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/../sample-kotlin/build.gradle.kts" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -70,6 +31,15 @@
     <ignored path="$PROJECT_DIR$/../sample-groovy/.gradle/" />
     <ignored path="$PROJECT_DIR$/../sample-groovy/build/" />
     <ignored path="$PROJECT_DIR$/../sample-groovy/out/" />
+    <ignored path="$PROJECT_DIR$/../sample-kotlin/.gradle/" />
+    <ignored path="$PROJECT_DIR$/../sample-kotlin/build/" />
+    <ignored path="$PROJECT_DIR$/../sample-kotlin/out/" />
+    <ignored path="$PROJECT_DIR$/../sample-kotlin/buildSrc/.gradle/" />
+    <ignored path="$PROJECT_DIR$/../sample-kotlin/buildSrc/build/" />
+    <ignored path="$PROJECT_DIR$/../sample-kotlin/buildSrc/out/" />
+    <ignored path="$PROJECT_DIR$/../sample-groovy/buildSrc/.gradle/" />
+    <ignored path="$PROJECT_DIR$/../sample-groovy/buildSrc/build/" />
+    <ignored path="$PROJECT_DIR$/../sample-groovy/buildSrc/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,20 +81,9 @@
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="buildConfigKt-composite" type="f1a62948:ProjectNode" />
-                <item name="sample-groovy" type="2d1252cf:ModuleNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="buildConfigKt-composite" type="f1a62948:ProjectNode" />
-                <item name="sample-groovy" type="2d1252cf:ModuleNode" />
+                <item name="buildConfigKt-composite" type="2d1252cf:ModuleNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="buildConfigKt-composite" type="f1a62948:ProjectNode" />
-                <item name="sample-groovy" type="2d1252cf:ModuleNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="other" type="c8890929:TasksNode$1" />
+                <item name="custom" type="c8890929:TasksNode$1" />
               </path>
             </expand>
             <select />
@@ -134,7 +93,67 @@
     </system>
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../sample-kotlin/build.gradle.kts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="16" column="42" selection-start-line="16" selection-start-column="42" selection-end-line="16" selection-end-column="42" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../sample-groovy/buildSrc/build.gradle.kts">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../sample-groovy/buildSrc/src/main/kotlin/Libs.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="24" column="32" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/../sample-groovy/build.gradle">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../sample-groovy/buildSrc/src/main/kotlin/Versions.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="9" column="54" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="54" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../sample-kotlin/buildSrc/src/main/kotlin/Libs.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="24" column="32" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../sample-kotlin/buildSrc/src/main/kotlin/Versions.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="15" column="63" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="63" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -151,8 +170,11 @@
       <list>
         <option value="$PROJECT_DIR$/../sample-groovy/src/main/kotlin/io/pixeloutlaw/gradle/SampleGroovy.kt" />
         <option value="$PROJECT_DIR$/build.gradle.kts" />
-        <option value="$PROJECT_DIR$/../sample-groovy/build.gradle" />
         <option value="$PROJECT_DIR$/../plugin/src/main/kotlin/io/pixeloutlaw/gradle/buildconfig/BuildConfigKtPlugin.kt" />
+        <option value="$PROJECT_DIR$/../plugin/buildSrc/src/main/kotlin/Versions.kt" />
+        <option value="$PROJECT_DIR$/../sample-kotlin/build.gradle.kts" />
+        <option value="$PROJECT_DIR$/../sample-groovy/buildSrc/build.gradle.kts" />
+        <option value="$PROJECT_DIR$/../sample-groovy/build.gradle" />
       </list>
     </option>
   </component>
@@ -168,7 +190,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -181,6 +202,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -191,7 +213,7 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.20148148" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.import" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -205,7 +227,26 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Kotlin.io.pixeloutlaw.gradle.SampleGroovyKt">
+  <component name="RunManager" selected="Gradle.composite [buildSrcVersionsAll]">
+    <configuration name="composite [buildSrcVersionsAll]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="buildSrcVersionsAll" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
     <configuration name="composite [checkAll]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -240,6 +281,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.composite [buildSrcVersionsAll]" />
         <item itemvalue="Kotlin.io.pixeloutlaw.gradle.SampleGroovyKt" />
         <item itemvalue="Gradle.composite [checkAll]" />
       </list>
@@ -254,17 +296,19 @@
       <updated>1551756598471</updated>
       <workItem from="1551756600680" duration="24000" />
       <workItem from="1551756690351" duration="160000" />
-      <workItem from="1551756866298" duration="1603000" />
+      <workItem from="1551756866298" duration="2241000" />
+      <workItem from="1551759423702" duration="199000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1787000" />
+    <option name="totallyTimeSpent" value="2624000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2553305" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25799572" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -280,7 +324,7 @@
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="11" />
-      <window_info anchor="bottom" id="Build" order="12" visible="true" weight="0.32936078" />
+      <window_info anchor="bottom" id="Build" order="12" weight="0.32936078" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -342,34 +386,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../plugin/buildSrc/src/main/kotlin/Versions.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="19" column="14" selection-start-line="19" selection-start-column="14" selection-end-line="19" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/build.gradle.kts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../plugin/build.gradle.kts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="34" selection-start-line="34" selection-end-line="39" selection-end-column="1" />
-          <folding>
-            <element signature="e#0#121#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../sample-groovy/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
         </state>
       </provider>
     </entry>
@@ -384,6 +404,82 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="18" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../sample-kotlin/settings.gradle.kts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="25" selection-start-line="1" selection-start-column="25" selection-end-line="1" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../plugin/buildSrc/src/main/kotlin/Libs.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="173">
+          <caret line="43" column="24" selection-start-line="43" selection-start-column="24" selection-end-line="43" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../plugin/build.gradle.kts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="22" column="24" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#121#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../plugin/buildSrc/src/main/kotlin/Versions.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="146">
+          <caret line="29" column="53" selection-start-line="29" selection-start-column="53" selection-end-line="29" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../sample-kotlin/build.gradle.kts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="42" selection-start-line="16" selection-start-column="42" selection-end-line="16" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../sample-groovy/buildSrc/build.gradle.kts">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../sample-groovy/buildSrc/src/main/kotlin/Libs.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="32" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../sample-groovy/buildSrc/src/main/kotlin/Versions.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="54" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../sample-kotlin/buildSrc/src/main/kotlin/Libs.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="32" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../sample-kotlin/buildSrc/src/main/kotlin/Versions.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="63" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../sample-groovy/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
         </state>
       </provider>
     </entry>
