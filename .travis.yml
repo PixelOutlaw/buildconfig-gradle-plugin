@@ -1,4 +1,6 @@
 language: java
+before_install:
+  - cd composite && chmod a+x ./gradlew
 install:
   - cd composite && ./gradlew assemble
 script:
