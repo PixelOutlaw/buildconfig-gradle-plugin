@@ -1,7 +1,7 @@
 # buildConfigKt
 [![][gradlePluginPortal]](https://plugins.gradle.org/plugin/io.pixeloutlaw.gradle.buildconfigkt)
 [![][travisCi]](https://travis-ci.com/PixelOutlaw/buildconfig-gradle-plugin)
-[![][buildkit]](https://buildkite.com/pixeloutlaw/buildconfigkt-gradle-plugin)
+[![][buildkite]](https://buildkite.com/pixeloutlaw/buildconfigkt-gradle-plugin)
 
 ## Requirements
 * Gradle >= 4.9
@@ -86,6 +86,6 @@ object Kenobi {
 ## Development
 Open the `composite` project in IntelliJ in order to be able to edit and test the plugin.
 
-[gradlePluginPortal]: https://img.shields.io/maven-metadata/v/https/plugins.gradle.org/m2/gradle/plugin/io/pixeloutlaw/gradle/buildconfigkt/io.pixeloutlaw.gradle.buildconfigkt.gradle.plugin/maven-metadata.xml.svg "Gradle Plugin Portal"
+[gradlePluginPortal]: https://img.shields.io/maven-metadata/v/https/plugins.gradle.org/m2/io/pixeloutlaw/gradle/buildConfigKt/maven-metadata.xml.svg "Gradle Plugin Portal"
 [travisCi]: https://img.shields.io/travis/com/PixelOutlaw/buildconfig-gradle-plugin.svg
-[buildkit]: https://img.shields.io/buildkite/1cdd375854f9e706fe6a1173a5f7e232bb8f022de20f4f4aa8.svg
+[buildkite]: https://img.shields.io/buildkite/1cdd375854f9e706fe6a1173a5f7e232bb8f022de20f4f4aa8.svg
