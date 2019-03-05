@@ -82,5 +82,8 @@ object Kenobi {
 }
 ```
 
+## Development
+Open the `composite` project in IntelliJ in order to be able to edit and test the plugin.
+
 [gradlePluginPortal]: https://img.shields.io/maven-metadata/v/https/plugins.gradle.org/m2/gradle/plugin/io/pixeloutlaw/gradle/buildconfigkt/io.pixeloutlaw.gradle.buildconfigkt.gradle.plugin/maven-metadata.xml.svg "Gradle Plugin Portal"
 [travisCi]: https://img.shields.io/travis/com/PixelOutlaw/buildconfig-gradle-plugin.svg
