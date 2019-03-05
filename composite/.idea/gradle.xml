@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <compositeConfiguration>
+          <compositeBuild compositeDefinitionSource="SCRIPT">
+            <builds>
+              <build path="$PROJECT_DIR$/../plugin">
+                <projects>
+                  <project path="$PROJECT_DIR$/../plugin" />
+                </projects>
+              </build>
+              <build path="$PROJECT_DIR$/../sample-groovy">
+                <projects>
+                  <project path="$PROJECT_DIR$/../sample-groovy" />
+                </projects>
+              </build>
+              <build path="$PROJECT_DIR$/../sample-kotlin">
+                <projects>
+                  <project path="$PROJECT_DIR$/../sample-kotlin" />
+                </projects>
+              </build>
+            </builds>
+          </compositeBuild>
+        </compositeConfiguration>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="gradleHome" value="C:/bin/gradle" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/../plugin" />
+            <option value="$PROJECT_DIR$/../plugin/buildSrc" />
+            <option value="$PROJECT_DIR$/../sample-groovy" />
+            <option value="$PROJECT_DIR$/../sample-groovy/buildSrc" />
+            <option value="$PROJECT_DIR$/../sample-kotlin" />
+            <option value="$PROJECT_DIR$/../sample-kotlin/buildSrc" />
+          </set>
+        </option>
+        <option name="useQualifiedModuleNames" value="true" />
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>

@@ -1,8 +1,11 @@
 language: java
-jdk:
-- oraclejdk8
-before_install:
-- chmod +x ./gradlew
+cache:
+  directories:
+    - $HOME/.gradle
+before_script:
+  - chmod a+x ./composite/gradlew
+script:
+  - cd composite && ./gradlew checkAll
 env:
   - GRADLE_CURRENT_VERSION=5.1.1
   - GRADLE_CURRENT_VERSION=5.0
