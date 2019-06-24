@@ -17,10 +17,10 @@ import org.gradle.api.Project
 open class BuildConfigKtExtension {
     /**
      * Contains default values for the `generateBuildConfigKt` task.
-     * @property defaultAppName default app name, if [appName] equals this, the task will determine the value
-     * @property defaultGroup default group, if [group] equals this, the task will determine the value
-     * @property defaultVersion default version, if [version] equals this, the task will determine the value
-     * @property defaultPackageName default package name, if [packageName] equals this, the task will determine the value
+     * @property defaultAppName default app name, if [appName] equals this, the task will determine it
+     * @property defaultGroup default group, if [group] equals this, the task will determine it
+     * @property defaultVersion default version, if [version] equals this, the task will determine it
+     * @property defaultPackageName default package name, if [packageName] equals this, the task will determine it
      * @property defaultClassName default class name
      */
     companion object {
@@ -38,7 +38,8 @@ open class BuildConfigKtExtension {
     var className: String = defaultClassName
 
     /**
-     * If [BuildConfigKtExtension.appName] is equal to [defaultAppName], returns `project.name`. Otherwise, returns [appName].
+     * If [BuildConfigKtExtension.appName] is equal to [defaultAppName], returns `project.name`. Otherwise,
+     * returns [appName].
      *
      * @return appName for use in `generateBuildConfigKt`
      */
@@ -51,7 +52,8 @@ open class BuildConfigKtExtension {
     }
 
     /**
-     * If [BuildConfigKtExtension.group] is equal to [defaultGroup], returns `project.group`. Otherwise, returns [group].
+     * If [BuildConfigKtExtension.group] is equal to [defaultGroup], returns `project.group`. Otherwise,
+     * returns [group].
      *
      * @return group for use in `generateBuildConfigKt`
      */
@@ -64,7 +66,8 @@ open class BuildConfigKtExtension {
     }
 
     /**
-     * If [BuildConfigKtExtension.version] is equal to [defaultVersion], returns `project.version`. Otherwise, returns [version].
+     * If [BuildConfigKtExtension.version] is equal to [defaultVersion], returns `project.version`. Otherwise,
+     * returns [version].
      *
      * @return version for use in `generateBuildConfigKt`
      */

@@ -71,9 +71,13 @@ pluginBundle {
 spotless {
     kotlin {
         ktlint()
+        trimTrailingWhitespace()
+        endWithNewline()
     }
     kotlinGradle {
         ktlint()
+        trimTrailingWhitespace()
+        endWithNewline()
     }
 }
 

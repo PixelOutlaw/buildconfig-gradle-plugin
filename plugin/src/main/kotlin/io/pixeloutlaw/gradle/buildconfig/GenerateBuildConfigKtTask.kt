@@ -6,12 +6,12 @@ import com.squareup.kotlinpoet.KModifier
 import com.squareup.kotlinpoet.PropertySpec
 import com.squareup.kotlinpoet.TypeSpec
 import org.gradle.api.DefaultTask
-import org.gradle.api.tasks.OutputFile
+import org.gradle.api.tasks.OutputDirectory
 import org.gradle.api.tasks.TaskAction
 import org.gradle.kotlin.dsl.getByType
 
 open class GenerateBuildConfigKtTask : DefaultTask() {
-    @OutputFile
+    @OutputDirectory
     val output = project.file(
         BuildConfigUtils.getRootOutputPath(project.buildDir.toPath())
     )
