@@ -1,8 +1,8 @@
 language: java
 jdk:
-  - oraclejdk8
-  - oraclejdk9
-  - oraclejdk11
+  - openjdk8
+  - openjdk10
+  - openjdk11
 cache:
   directories:
     - $HOME/.gradle
@@ -11,6 +11,12 @@ before_script:
 script:
   - cd composite && ./gradlew checkAll
 env:
+  - GRADLE_CURRENT_VERSION=5.4.1
+  - GRADLE_CURRENT_VERSION=5.4
+  - GRADLE_CURRENT_VERSION=5.3.1
+  - GRADLE_CURRENT_VERSION=5.3
+  - GRADLE_CURRENT_VERSION=5.2.1
+  - GRADLE_CURRENT_VERSION=5.2
   - GRADLE_CURRENT_VERSION=5.1.1
   - GRADLE_CURRENT_VERSION=5.0
   - GRADLE_CURRENT_VERSION=4.10.3
