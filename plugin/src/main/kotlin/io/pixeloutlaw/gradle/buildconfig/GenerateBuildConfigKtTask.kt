@@ -36,6 +36,11 @@ open class GenerateBuildConfigKtTask : DefaultTask() {
             .addType(
                 TypeSpec.objectBuilder(buildConfigClass)
                     .addProperty(
+                        PropertySpec.builder("GROUP", String::class, KModifier.CONST)
+                            .initializer("%S", buildConfigKtExtension.groupOrProjectGroup(project))
+                            .build()
+                    )
+                    .addProperty(
                         PropertySpec.builder("NAME", String::class, KModifier.CONST)
                             .initializer("%S", buildConfigKtExtension.appNameOrProjectName(project))
                             .build()

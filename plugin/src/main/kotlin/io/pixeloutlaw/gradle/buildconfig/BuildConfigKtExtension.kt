@@ -18,18 +18,21 @@ open class BuildConfigKtExtension {
     /**
      * Contains default values for the `generateBuildConfigKt` task.
      * @property defaultAppName default app name, if [appName] equals this, the task will determine the value
+     * @property defaultGroup default group, if [group] equals this, the task will determine the value
      * @property defaultVersion default version, if [version] equals this, the task will determine the value
      * @property defaultPackageName default package name, if [packageName] equals this, the task will determine the value
      * @property defaultClassName default class name
      */
     companion object {
         const val defaultAppName = ""
+        const val defaultGroup = ""
         const val defaultVersion = ""
         const val defaultPackageName = ""
         const val defaultClassName = "BuildConfig"
     }
 
     var appName: String = defaultAppName
+    var group: String = defaultGroup
     var version: String = defaultVersion
     var packageName: String = defaultPackageName
     var className: String = defaultClassName
@@ -44,6 +47,19 @@ open class BuildConfigKtExtension {
             project.name
         } else {
             appName
+        }
+    }
+
+    /**
+     * If [BuildConfigKtExtension.group] is equal to [defaultGroup], returns `project.group`. Otherwise, returns [group].
+     *
+     * @return group for use in `generateBuildConfigKt`
+     */
+    fun groupOrProjectGroup(project: Project): String {
+        return if (group == defaultGroup) {
+            project.group.toString()
+        } else {
+            group
         }
     }
 

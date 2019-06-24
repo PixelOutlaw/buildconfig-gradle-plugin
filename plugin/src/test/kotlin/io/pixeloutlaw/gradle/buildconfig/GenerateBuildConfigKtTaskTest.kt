@@ -54,10 +54,23 @@ class GenerateBuildConfigKtTaskTest {
             .map { it as TypeSpec }
         assertEquals(1, typeSpecs.size)
         val buildConfigTypeSpec = typeSpecs.first()
-        assertEquals(2, buildConfigTypeSpec.propertySpecs.size)
+        assertEquals(3, buildConfigTypeSpec.propertySpecs.size)
         val namePropertySpec = buildConfigTypeSpec.propertySpecs.first { it.name == "NAME" }
         assertNotNull(namePropertySpec)
         assertEquals("\"testGenerateBuildConfigKt\"", namePropertySpec.initializer?.toString())
+    }
+
+    @Test
+    fun doesBuildFileSpecUseProjectGroupForDefaultExtension() {
+        val fileSpec = generateBuildConfigKtTask.buildFileSpec(buildConfigKtExtension)
+        val typeSpecs = fileSpec.members.filter { it is TypeSpec && it.name == buildConfigKtExtension.className }
+            .map { it as TypeSpec }
+        assertEquals(1, typeSpecs.size)
+        val buildConfigTypeSpec = typeSpecs.first()
+        assertEquals(3, buildConfigTypeSpec.propertySpecs.size)
+        val groupPropertySpec = buildConfigTypeSpec.propertySpecs.first { it.name == "GROUP" }
+        assertNotNull(groupPropertySpec)
+        assertEquals("\"io.pixeloutlaw\"", groupPropertySpec.initializer?.toString())
     }
 
     @Test
@@ -67,7 +80,7 @@ class GenerateBuildConfigKtTaskTest {
             .map { it as TypeSpec }
         assertEquals(1, typeSpecs.size)
         val buildConfigTypeSpec = typeSpecs.first()
-        assertEquals(2, buildConfigTypeSpec.propertySpecs.size)
+        assertEquals(3, buildConfigTypeSpec.propertySpecs.size)
         val versionPropertySpec = buildConfigTypeSpec.propertySpecs.first { it.name == "VERSION" }
         assertNotNull(versionPropertySpec)
         assertEquals("\"4.2.0\"", versionPropertySpec.initializer?.toString())

@@ -35,6 +35,31 @@ class BuildConfigKtExtensionTest {
     }
 
     @Test
+    fun `does groupOrProjectGroup return project group for no project configuration or extension configuration`() {
+        val project = constructProject()
+        val buildConfigKtExtension = project.extensions.getByType(BuildConfigKtExtension::class)
+
+        assertEquals("", buildConfigKtExtension.groupOrProjectGroup(project))
+    }
+
+    @Test
+    fun `does groupOrProjectGroup return project group for no extension configuration`() {
+        val project = constructProject(group = "io.pixeloutlaw", name = "buildConfigKt", version = "4.2.0")
+        val buildConfigKtExtension = project.extensions.getByType(BuildConfigKtExtension::class)
+
+        assertEquals("io.pixeloutlaw", buildConfigKtExtension.groupOrProjectGroup(project))
+    }
+
+    @Test
+    fun `does groupOrProjectGroup return group for extension configuration`() {
+        val project = constructProject(group = "io.pixeloutlaw", name = "buildConfigKt", version = "4.2.0")
+        val buildConfigKtExtension = project.extensions.getByType(BuildConfigKtExtension::class)
+        buildConfigKtExtension.group = "dankMemes"
+
+        assertEquals("dankMemes", buildConfigKtExtension.groupOrProjectGroup(project))
+    }
+
+    @Test
     fun doesVersionOrProjectVersionReturnProjectVersionForNoProjectConfigurationOrExtensionConfiguration() {
         val project = constructProject()
         val buildConfigKtExtension = project.extensions.getByType(BuildConfigKtExtension::class)
