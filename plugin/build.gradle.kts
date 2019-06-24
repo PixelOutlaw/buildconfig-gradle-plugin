@@ -42,11 +42,12 @@ scmVersion {
         pre(
             "fileUpdate",
             mapOf<String, Any>(
-                "file" to file("../README.md"),
+                "file" to "README.md",
                 "pattern" to { v, _ -> "id(\"io.pixeloutlaw.gradle.buildconfigkt\") version \"$v\"" },
                 "replacement" to { v, _ -> "id(\"io.pixeloutlaw.gradle.buildconfigkt\") version \"$v\"" }
             )
         )
+        pre("commit")
     })
     project.version = version
 }
