@@ -77,7 +77,7 @@ buildScan {
 }
 
 tasks.withType<Wrapper>().configureEach {
-    gradleVersion = "5.1.1"
+    gradleVersion = "5.4.1"
 }
 
 tasks.withType<KotlinCompile>().configureEach {

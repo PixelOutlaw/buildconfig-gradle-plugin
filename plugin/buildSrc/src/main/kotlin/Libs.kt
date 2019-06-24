@@ -37,38 +37,38 @@ object Libs {
     /**
      * https://kotlinlang.org/ */
     const val kotlin_compiler_embeddable: String =
-            "org.jetbrains.kotlin:kotlin-compiler-embeddable:" + Versions.org_jetbrains_kotlin
+            "org.jetbrains.kotlin:kotlin-compiler-embeddable:" + Versions.kotlin_compiler_embeddable
 
     /**
      * https://kotlinlang.org/ */
     const val kotlin_gradle_plugin: String = "org.jetbrains.kotlin:kotlin-gradle-plugin:" +
-            Versions.org_jetbrains_kotlin
+            Versions.kotlin_gradle_plugin
 
     /**
      * https://kotlinlang.org/ */
     const val kotlin_reflect: String = "org.jetbrains.kotlin:kotlin-reflect:" +
-            Versions.org_jetbrains_kotlin
+            Versions.kotlin_reflect
 
     /**
      * https://kotlinlang.org/ */
     const val kotlin_sam_with_receiver: String = "org.jetbrains.kotlin:kotlin-sam-with-receiver:" +
-            Versions.org_jetbrains_kotlin
+            Versions.kotlin_sam_with_receiver
 
     /**
      * https://kotlinlang.org/ */
     const val kotlin_scripting_compiler_embeddable: String =
             "org.jetbrains.kotlin:kotlin-scripting-compiler-embeddable:" +
-            Versions.org_jetbrains_kotlin
+            Versions.kotlin_scripting_compiler_embeddable
 
     /**
      * https://kotlinlang.org/ */
     const val kotlin_stdlib_jdk8: String = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:" +
-            Versions.org_jetbrains_kotlin
+            Versions.kotlin_stdlib_jdk8
 
     /**
      * https://kotlinlang.org/ */
     const val kotlin_test_junit5: String = "org.jetbrains.kotlin:kotlin-test-junit5:" +
-            Versions.org_jetbrains_kotlin
+            Versions.kotlin_test_junit5
 
     /**
      * https://github.com/junit-pioneer/junit-pioneer */
