@@ -30,7 +30,7 @@ tasks.register("publish") {
 tasks.register("publishPlugins") {
     group = "Custom"
     description = "Publishes this plugin to the Gradle Plugin portal."
-    dependsOn(gradle.includedBuild("buildConfigKt").task(":publish"))
+    dependsOn(gradle.includedBuild("buildConfigKt").task(":publishPlugins"))
 }
 
 tasks.register("checkAll") {
