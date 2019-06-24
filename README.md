@@ -1,7 +1,6 @@
 # buildConfigKt
 [![][gradlePluginPortal]](https://plugins.gradle.org/plugin/io.pixeloutlaw.gradle.buildconfigkt)
 [![][travisCi]](https://travis-ci.com/PixelOutlaw/buildconfig-gradle-plugin)
-[![][buildkite]](https://buildkite.com/pixeloutlaw/buildconfigkt-gradle-plugin)
 
 ## Requirements
 * Gradle >= 4.9
