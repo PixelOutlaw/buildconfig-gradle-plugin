@@ -5,7 +5,7 @@ import java.nio.file.Paths
 
 object BuildConfigUtils {
     fun getRootOutputPath(projectBuildDir: Path): Path {
-        return projectBuildDir.resolve("generated/source/buildConfigKt")
+        return projectBuildDir.resolve("generated-sources/buildConfigKt")
     }
 
     fun convertGavToPackageName(groupId: Any, artifactId: Any): String {

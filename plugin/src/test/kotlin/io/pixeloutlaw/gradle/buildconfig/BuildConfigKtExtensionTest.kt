@@ -8,7 +8,7 @@ import org.jetbrains.kotlin.gradle.plugin.KotlinPlatformJvmPlugin
 import org.junit.jupiter.api.Test
 import kotlin.test.assertEquals
 
-class BuildConfigKtExtensionExtensionsTest {
+class BuildConfigKtExtensionTest {
     @Test
     fun doesAppNameOrProjectNameReturnProjectNameForNoProjectConfigurationOrExtensionConfiguration() {
         val project = constructProject()

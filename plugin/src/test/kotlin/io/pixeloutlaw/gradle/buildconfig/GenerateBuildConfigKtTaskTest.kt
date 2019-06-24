@@ -50,7 +50,8 @@ class GenerateBuildConfigKtTaskTest {
     @Test
     fun doesBuildFileSpecUseProjectNameForDefaultExtension() {
         val fileSpec = generateBuildConfigKtTask.buildFileSpec(buildConfigKtExtension)
-        val typeSpecs = fileSpec.members.filter { it is TypeSpec && it.name == buildConfigKtExtension.className }.map { it as TypeSpec }
+        val typeSpecs = fileSpec.members.filter { it is TypeSpec && it.name == buildConfigKtExtension.className }
+            .map { it as TypeSpec }
         assertEquals(1, typeSpecs.size)
         val buildConfigTypeSpec = typeSpecs.first()
         assertEquals(2, buildConfigTypeSpec.propertySpecs.size)
@@ -62,7 +63,8 @@ class GenerateBuildConfigKtTaskTest {
     @Test
     fun doesBuildFileSpecUseProjectVersionForDefaultExtension() {
         val fileSpec = generateBuildConfigKtTask.buildFileSpec(buildConfigKtExtension)
-        val typeSpecs = fileSpec.members.filter { it is TypeSpec && it.name == buildConfigKtExtension.className }.map { it as TypeSpec }
+        val typeSpecs = fileSpec.members.filter { it is TypeSpec && it.name == buildConfigKtExtension.className }
+            .map { it as TypeSpec }
         assertEquals(1, typeSpecs.size)
         val buildConfigTypeSpec = typeSpecs.first()
         assertEquals(2, buildConfigTypeSpec.propertySpecs.size)

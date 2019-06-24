@@ -19,21 +19,23 @@ object Versions {
 
     const val de_fayard_buildsrcversions_gradle_plugin: String = "0.3.2" 
 
+    const val io_gitlab_arturbosch_detekt: String = "1.0.0-RC15" 
+
     const val org_gradle_kotlin_kotlin_dsl_gradle_plugin: String = "1.2.6" // available: "1.2.8"
 
-    const val kotlin_compiler_embeddable: String = "1.3.21" // available: "1.3.40"
+    const val kotlin_compiler_embeddable: String = "1.3.31" // available: "1.3.40"
 
-    const val kotlin_gradle_plugin: String = "1.3.40" 
+    const val kotlin_gradle_plugin: String = "1.3.21" // available: "1.3.40"
 
     const val kotlin_reflect: String = "1.3.21" // available: "1.3.40"
 
-    const val kotlin_sam_with_receiver: String = "1.3.21" // available: "1.3.40"
+    const val kotlin_sam_with_receiver: String = "1.3.31" // available: "1.3.40"
 
-    const val kotlin_scripting_compiler_embeddable: String = "1.3.21" // available: "1.3.40"
+    const val kotlin_scripting_compiler_embeddable: String = "1.3.31" // available: "1.3.40"
 
     const val kotlin_stdlib_jdk8: String = "1.3.21" // available: "1.3.40"
 
-    const val kotlin_test_junit5: String = "1.3.40" 
+    const val kotlin_test_junit5: String = "1.3.21" // available: "1.3.40"
 
     const val junit_pioneer: String = "0.3.0" 
 

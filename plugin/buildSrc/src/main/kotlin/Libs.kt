@@ -30,6 +30,13 @@ object Libs {
             "de.fayard.buildSrcVersions:de.fayard.buildSrcVersions.gradle.plugin:" +
             Versions.de_fayard_buildsrcversions_gradle_plugin
 
+    const val detekt_cli: String = "io.gitlab.arturbosch.detekt:detekt-cli:" +
+            Versions.io_gitlab_arturbosch_detekt
+
+    const val io_gitlab_arturbosch_detekt_gradle_plugin: String =
+            "io.gitlab.arturbosch.detekt:io.gitlab.arturbosch.detekt.gradle.plugin:" +
+            Versions.io_gitlab_arturbosch_detekt
+
     const val org_gradle_kotlin_kotlin_dsl_gradle_plugin: String =
             "org.gradle.kotlin.kotlin-dsl:org.gradle.kotlin.kotlin-dsl.gradle.plugin:" +
             Versions.org_gradle_kotlin_kotlin_dsl_gradle_plugin

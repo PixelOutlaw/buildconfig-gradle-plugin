@@ -4,6 +4,7 @@ import io.pixeloutlaw.gradle.buildconfig.BuildConfigKtExtension.Companion.defaul
 import io.pixeloutlaw.gradle.buildconfig.BuildConfigKtExtension.Companion.defaultClassName
 import io.pixeloutlaw.gradle.buildconfig.BuildConfigKtExtension.Companion.defaultPackageName
 import io.pixeloutlaw.gradle.buildconfig.BuildConfigKtExtension.Companion.defaultVersion
+import org.gradle.api.Project
 
 /**
  * Configuration for the `generateBuildConfigKt` task.
@@ -32,4 +33,44 @@ open class BuildConfigKtExtension {
     var version: String = defaultVersion
     var packageName: String = defaultPackageName
     var className: String = defaultClassName
+
+    /**
+     * If [BuildConfigKtExtension.appName] is equal to [defaultAppName], returns `project.name`. Otherwise, returns [appName].
+     *
+     * @return appName for use in `generateBuildConfigKt`
+     */
+    fun appNameOrProjectName(project: Project): String {
+        return if (appName == defaultAppName) {
+            project.name
+        } else {
+            appName
+        }
+    }
+
+    /**
+     * If [BuildConfigKtExtension.version] is equal to [defaultVersion], returns `project.version`. Otherwise, returns [version].
+     *
+     * @return version for use in `generateBuildConfigKt`
+     */
+    fun versionOrProjectVersion(project: Project): String {
+        return if (version == defaultVersion) {
+            project.version.toString()
+        } else {
+            version
+        }
+    }
+
+    /**
+     * If [BuildConfigKtExtension.packageName] is equal to [defaultPackageName], returns
+     * `BuildConfigUtils.convertGavToPackageName(project.group, project.name)`. Otherwise, returns [appName].
+     *
+     * @return packageName for use in `generateBuildConfigKt`
+     */
+    fun packageNameOrProjectPackageName(project: Project): String {
+        return if (packageName == defaultPackageName) {
+            BuildConfigUtils.convertGavToPackageName(project.group, project.name)
+        } else {
+            packageName
+        }
+    }
 }

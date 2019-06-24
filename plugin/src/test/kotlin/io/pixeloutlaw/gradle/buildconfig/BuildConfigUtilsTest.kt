@@ -10,7 +10,7 @@ class BuildConfigUtilsTest {
     @Test
     fun doesGetRootOutputPathReturnTemplatedStringForPath() {
         assertEquals(
-            currentPath.resolve("generated/source/buildConfigKt"),
+            currentPath.resolve("generated-sources/buildConfigKt"),
             BuildConfigUtils.getRootOutputPath(currentPath)
         )
     }

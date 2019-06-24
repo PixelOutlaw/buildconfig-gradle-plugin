@@ -6,16 +6,15 @@ import com.squareup.kotlinpoet.KModifier
 import com.squareup.kotlinpoet.PropertySpec
 import com.squareup.kotlinpoet.TypeSpec
 import org.gradle.api.DefaultTask
+import org.gradle.api.tasks.OutputFile
 import org.gradle.api.tasks.TaskAction
 import org.gradle.kotlin.dsl.getByType
-import java.io.File
 
 open class GenerateBuildConfigKtTask : DefaultTask() {
-    private val output: File by lazy {
-        project.file(
-            BuildConfigUtils.getRootOutputPath(project.buildDir.toPath())
-        )
-    }
+    @OutputFile
+    val output = project.file(
+        BuildConfigUtils.getRootOutputPath(project.buildDir.toPath())
+    )
 
     init {
         description = "Generates a BuildConfig.kt with build information"
