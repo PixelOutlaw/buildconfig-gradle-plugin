@@ -10,7 +10,7 @@
 Edit the build.gradle(.kts) file of the project where you want to add a `BuildConfig.kt`:
 ```kotlin
 plugins {
-    id("io.pixeloutlaw.gradle.buildconfigkt") version "1.0.0"
+    id("io.pixeloutlaw.gradle.buildconfigkt") version "1.0.1"
 }
 ```
 
@@ -24,7 +24,7 @@ Using automatic configuration, below is a sample output from this plugin.
 // build.gradle.kts
 plugins {
     kotlin("jvm")
-    id("io.pixeloutlaw.gradle.buildconfigkt") version "1.0.0"
+    id("io.pixeloutlaw.gradle.buildconfigkt") version "1.0.1"
 }
 
 project.group = "simple.example"
@@ -52,7 +52,7 @@ Using all of the fields available in the extension, here is the output from this
 // build.gradle.kts
 plugins {
     kotlin("jvm")
-    id("io.pixeloutlaw.gradle.buildconfigkt") version "1.0.0"
+    id("io.pixeloutlaw.gradle.buildconfigkt") version "1.0.1"
 }
 
 project.group = "simple.example"
@@ -87,4 +87,3 @@ Open the `composite` project in IntelliJ in order to be able to edit and test th
 
 [gradlePluginPortal]: https://img.shields.io/maven-metadata/v/https/plugins.gradle.org/m2/io/pixeloutlaw/gradle/buildConfigKt/maven-metadata.xml.svg "Gradle Plugin Portal"
 [travisCi]: https://img.shields.io/travis/com/PixelOutlaw/buildconfig-gradle-plugin.svg
-[buildkite]: https://img.shields.io/buildkite/1cdd375854f9e706fe6a1173a5f7e232bb8f022de20f4f4aa8.svg

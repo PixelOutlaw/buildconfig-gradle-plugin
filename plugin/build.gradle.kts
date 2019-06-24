@@ -1,5 +1,6 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 import pl.allegro.tech.build.axion.release.domain.RepositoryConfig
+import pl.allegro.tech.build.axion.release.domain.hooks.HooksConfig
 
 plugins {
     `java-gradle-plugin`
@@ -36,6 +37,16 @@ dependencies {
 scmVersion {
     repository(closureOf<RepositoryConfig>() {
         directory = project.rootProject.file("../")
+    })
+    hooks(closureOf<HooksConfig>() {
+        pre(
+            "fileUpdate",
+            mapOf<String, Any>(
+                "file" to file("../README.md"),
+                "pattern" to { v, _ -> "id(\"io.pixeloutlaw.gradle.buildconfigkt\") version \"$v\"" },
+                "replacement" to { v, _ -> "id(\"io.pixeloutlaw.gradle.buildconfigkt\") version \"$v\"" }
+            )
+        )
     })
     project.version = version
 }
