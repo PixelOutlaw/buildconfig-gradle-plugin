@@ -1,4 +1,6 @@
 import pl.allegro.tech.build.axion.release.domain.RepositoryConfig
+import pl.allegro.tech.build.axion.release.domain.hooks.HookContext
+import pl.allegro.tech.build.axion.release.domain.hooks.HooksConfig
 
 plugins {
     idea
@@ -12,6 +14,18 @@ group = "io.pixeloutlaw.gradle"
 scmVersion {
     repository(closureOf<RepositoryConfig>() {
         directory = project.rootProject.file("../")
+    })
+    hooks(closureOf<HooksConfig>() {
+        pre("fileUpdate", mapOf(
+            "file" to "README.md",
+            "pattern" to closureOf<String, HookContext, String>() { v, _ ->
+                "id(\"io.pixeloutlaw.gradle.buildconfigkt\") version \"$v\""
+            },
+            "replacement" to closureOf<String, HookContext, String>() { v, _ ->
+                "id(\"io.pixeloutlaw.gradle.buildconfigkt\") version \"$v\""
+            }
+        ))
+        pre("commit")
     })
     project.version = version
 }
