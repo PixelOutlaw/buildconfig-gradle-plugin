@@ -17,7 +17,7 @@ scmVersion {
     })
     hooks(closureOf<HooksConfig>() {
         pre("fileUpdate", mapOf(
-            "file" to "README.md",
+            "file" to "../README.md",
             "pattern" to closureOf<String, HookContext, String>() { v, _ ->
                 "id(\"io.pixeloutlaw.gradle.buildconfigkt\") version \"$v\""
             },
