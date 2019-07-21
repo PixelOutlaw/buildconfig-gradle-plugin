@@ -11,7 +11,9 @@ object Versions {
 
     const val com_diffplug_gradle_spotless_gradle_plugin: String = "3.23.1" 
 
-    const val com_gradle_build_scan_gradle_plugin: String = "2.2.1" // available: "2.3"
+    const val truth: String = "1.0" 
+
+    const val com_gradle_build_scan_gradle_plugin: String = "2.3" 
 
     const val com_gradle_plugin_publish_gradle_plugin: String = "0.10.1" 
 
@@ -21,27 +23,23 @@ object Versions {
 
     const val io_gitlab_arturbosch_detekt: String = "1.0.0-RC15" 
 
-    const val org_gradle_kotlin_kotlin_dsl_gradle_plugin: String = "1.2.6" // available: "1.2.8"
+    const val org_gradle_kotlin_kotlin_dsl_gradle_plugin: String = "1.2.8" // available: "1.2.9"
 
-    const val kotlin_compiler_embeddable: String = "1.3.31" // available: "1.3.40"
+    const val kotlin_compiler_embeddable: String = "1.3.31" // available: "1.3.41"
 
-    const val kotlin_gradle_plugin: String = "1.3.21" // available: "1.3.40"
+    const val kotlin_gradle_plugin: String = "1.3.21" // available: "1.3.41"
 
-    const val kotlin_reflect: String = "1.3.21" // available: "1.3.40"
+    const val kotlin_reflect: String = "1.3.31" // available: "1.3.41"
 
-    const val kotlin_sam_with_receiver: String = "1.3.31" // available: "1.3.40"
+    const val kotlin_sam_with_receiver: String = "1.3.31" // available: "1.3.41"
 
-    const val kotlin_scripting_compiler_embeddable: String = "1.3.31" // available: "1.3.40"
+    const val kotlin_scripting_compiler_embeddable: String = "1.3.31" // available: "1.3.41"
 
-    const val kotlin_stdlib_jdk8: String = "1.3.21" // available: "1.3.40"
+    const val kotlin_stdlib_jdk8: String = "1.3.31" // available: "1.3.41"
 
-    const val kotlin_test_junit5: String = "1.3.21" // available: "1.3.40"
+    const val junit_jupiter: String = "5.5.1" 
 
-    const val junit_pioneer: String = "0.3.0" 
-
-    const val org_junit_jupiter: String = "5.4.2" 
-
-    const val mockito_junit_jupiter: String = "2.28.2" 
+    const val mockito_junit_jupiter: String = "3.0.0" 
 
     const val pl_allegro_tech_build_axion_release_gradle_plugin: String = "1.10.1" 
 
@@ -51,12 +49,12 @@ object Versions {
      *      ./gradle/wrapper/gradle-wrapper.properties
      */
     object Gradle {
-        const val runningVersion: String = "5.4.1"
+        const val runningVersion: String = "5.5.1"
 
-        const val currentVersion: String = "5.4.1"
+        const val currentVersion: String = "5.5.1"
 
-        const val nightlyVersion: String = "5.6-20190624000056+0000"
+        const val nightlyVersion: String = "5.7-20190720220029+0000"
 
-        const val releaseCandidate: String = "5.5-rc-3"
+        const val releaseCandidate: String = ""
     }
 }

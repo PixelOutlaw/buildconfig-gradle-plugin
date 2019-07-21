@@ -14,6 +14,10 @@ object Libs {
             "com.diffplug.gradle.spotless:com.diffplug.gradle.spotless.gradle.plugin:" +
             Versions.com_diffplug_gradle_spotless_gradle_plugin
 
+    /**
+     * http://github.com/google/truth */
+    const val truth: String = "com.google.truth:truth:" + Versions.truth
+
     const val com_gradle_build_scan_gradle_plugin: String =
             "com.gradle.build-scan:com.gradle.build-scan.gradle.plugin:" +
             Versions.com_gradle_build_scan_gradle_plugin
@@ -73,23 +77,8 @@ object Libs {
             Versions.kotlin_stdlib_jdk8
 
     /**
-     * https://kotlinlang.org/ */
-    const val kotlin_test_junit5: String = "org.jetbrains.kotlin:kotlin-test-junit5:" +
-            Versions.kotlin_test_junit5
-
-    /**
-     * https://github.com/junit-pioneer/junit-pioneer */
-    const val junit_pioneer: String = "org.junit-pioneer:junit-pioneer:" + Versions.junit_pioneer
-
-    /**
      * https://junit.org/junit5/ */
-    const val junit_jupiter_api: String = "org.junit.jupiter:junit-jupiter-api:" +
-            Versions.org_junit_jupiter
-
-    /**
-     * https://junit.org/junit5/ */
-    const val junit_jupiter_engine: String = "org.junit.jupiter:junit-jupiter-engine:" +
-            Versions.org_junit_jupiter
+    const val junit_jupiter: String = "org.junit.jupiter:junit-jupiter:" + Versions.junit_jupiter
 
     /**
      * https://github.com/mockito/mockito */

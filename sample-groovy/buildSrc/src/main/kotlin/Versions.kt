@@ -10,9 +10,11 @@ import kotlin.String
 object Versions {
   const val de_fayard_buildsrcversions_gradle_plugin: String = "0.3.2" 
 
-  const val org_jetbrains_kotlin_jvm_gradle_plugin: String = "1.3.40" 
+  const val org_jetbrains_kotlin_jvm_gradle_plugin: String = "1.3.40" // available: "1.3.41"
 
-  const val org_jetbrains_kotlin: String = "1.3.40" 
+  const val kotlin_scripting_compiler_embeddable: String = "1.3.40" // available: "1.3.41"
+
+  const val kotlin_stdlib_jdk8: String = "1.3.41" 
 
   const val pl_allegro_tech_build_axion_release_gradle_plugin: String = "1.10.1" 
 
@@ -22,12 +24,12 @@ object Versions {
    *      ./gradle/wrapper/gradle-wrapper.properties
    */
   object Gradle {
-    const val runningVersion: String = "5.4.1"
+    const val runningVersion: String = "5.5.1"
 
-    const val currentVersion: String = "5.4.1"
+    const val currentVersion: String = "5.5.1"
 
-    const val nightlyVersion: String = "5.6-20190624000056+0000"
+    const val nightlyVersion: String = "5.7-20190720220029+0000"
 
-    const val releaseCandidate: String = "5.5-rc-3"
+    const val releaseCandidate: String = ""
   }
 }

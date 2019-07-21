@@ -19,13 +19,14 @@ object Libs {
    * https://kotlinlang.org/
    */
   const val kotlin_scripting_compiler_embeddable: String =
-      "org.jetbrains.kotlin:kotlin-scripting-compiler-embeddable:" + Versions.org_jetbrains_kotlin
+      "org.jetbrains.kotlin:kotlin-scripting-compiler-embeddable:" +
+      Versions.kotlin_scripting_compiler_embeddable
 
   /**
    * https://kotlinlang.org/
    */
   const val kotlin_stdlib_jdk8: String = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:" +
-      Versions.org_jetbrains_kotlin
+      Versions.kotlin_stdlib_jdk8
 
   const val pl_allegro_tech_build_axion_release_gradle_plugin: String =
       "pl.allegro.tech.build.axion-release:pl.allegro.tech.build.axion-release.gradle.plugin:" +
