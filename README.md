@@ -10,7 +10,7 @@
 Edit the build.gradle(.kts) file of the project where you want to add a `BuildConfig.kt`:
 ```kotlin
 plugins {
-    id("io.pixeloutlaw.gradle.buildconfigkt") version "1.0.2"
+    id("io.pixeloutlaw.gradle.buildconfigkt") version "1.0.4"
 }
 ```
 
@@ -24,7 +24,7 @@ Using automatic configuration, below is a sample output from this plugin.
 // build.gradle.kts
 plugins {
     kotlin("jvm")
-    id("io.pixeloutlaw.gradle.buildconfigkt") version "1.0.2"
+    id("io.pixeloutlaw.gradle.buildconfigkt") version "1.0.4"
 }
 
 project.group = "simple.example"
@@ -52,7 +52,7 @@ Using all of the fields available in the extension, here is the output from this
 // build.gradle.kts
 plugins {
     kotlin("jvm")
-    id("io.pixeloutlaw.gradle.buildconfigkt") version "1.0.2"
+    id("io.pixeloutlaw.gradle.buildconfigkt") version "1.0.4"
 }
 
 project.group = "simple.example"
