@@ -1,12 +1,12 @@
 package io.pixeloutlaw.gradle.buildconfig
 
+import com.google.common.truth.Truth.assertThat
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.apply
 import org.gradle.kotlin.dsl.getByType
 import org.gradle.testfixtures.ProjectBuilder
 import org.jetbrains.kotlin.gradle.plugin.KotlinPlatformJvmPlugin
 import org.junit.jupiter.api.Test
-import kotlin.test.assertEquals
 
 class BuildConfigKtExtensionTest {
     @Test
@@ -14,7 +14,7 @@ class BuildConfigKtExtensionTest {
         val project = constructProject()
         val buildConfigKtExtension = project.extensions.getByType(BuildConfigKtExtension::class)
 
-        assertEquals("test", buildConfigKtExtension.appNameOrProjectName(project))
+        assertThat("test").isEqualTo(buildConfigKtExtension.appNameOrProjectName(project))
     }
 
     @Test
@@ -22,7 +22,7 @@ class BuildConfigKtExtensionTest {
         val project = constructProject(group = "io.pixeloutlaw", name = "buildConfigKt", version = "4.2.0")
         val buildConfigKtExtension = project.extensions.getByType(BuildConfigKtExtension::class)
 
-        assertEquals("buildConfigKt", buildConfigKtExtension.appNameOrProjectName(project))
+        assertThat("buildConfigKt").isEqualTo(buildConfigKtExtension.appNameOrProjectName(project))
     }
 
     @Test
@@ -31,7 +31,7 @@ class BuildConfigKtExtensionTest {
         val buildConfigKtExtension = project.extensions.getByType(BuildConfigKtExtension::class)
         buildConfigKtExtension.appName = "dankMemes"
 
-        assertEquals("dankMemes", buildConfigKtExtension.appNameOrProjectName(project))
+        assertThat("dankMemes").isEqualTo(buildConfigKtExtension.appNameOrProjectName(project))
     }
 
     @Test
@@ -39,7 +39,7 @@ class BuildConfigKtExtensionTest {
         val project = constructProject()
         val buildConfigKtExtension = project.extensions.getByType(BuildConfigKtExtension::class)
 
-        assertEquals("", buildConfigKtExtension.groupOrProjectGroup(project))
+        assertThat("").isEqualTo(buildConfigKtExtension.groupOrProjectGroup(project))
     }
 
     @Test
@@ -47,7 +47,7 @@ class BuildConfigKtExtensionTest {
         val project = constructProject(group = "io.pixeloutlaw", name = "buildConfigKt", version = "4.2.0")
         val buildConfigKtExtension = project.extensions.getByType(BuildConfigKtExtension::class)
 
-        assertEquals("io.pixeloutlaw", buildConfigKtExtension.groupOrProjectGroup(project))
+        assertThat("io.pixeloutlaw").isEqualTo(buildConfigKtExtension.groupOrProjectGroup(project))
     }
 
     @Test
@@ -56,7 +56,7 @@ class BuildConfigKtExtensionTest {
         val buildConfigKtExtension = project.extensions.getByType(BuildConfigKtExtension::class)
         buildConfigKtExtension.group = "dankMemes"
 
-        assertEquals("dankMemes", buildConfigKtExtension.groupOrProjectGroup(project))
+        assertThat("dankMemes").isEqualTo(buildConfigKtExtension.groupOrProjectGroup(project))
     }
 
     @Test
@@ -64,7 +64,7 @@ class BuildConfigKtExtensionTest {
         val project = constructProject()
         val buildConfigKtExtension = project.extensions.getByType(BuildConfigKtExtension::class)
 
-        assertEquals("unspecified", buildConfigKtExtension.versionOrProjectVersion(project))
+        assertThat("unspecified").isEqualTo(buildConfigKtExtension.versionOrProjectVersion(project))
     }
 
     @Test
@@ -72,7 +72,7 @@ class BuildConfigKtExtensionTest {
         val project = constructProject(group = "io.pixeloutlaw", name = "buildConfigKt", version = "4.2.0")
         val buildConfigKtExtension = project.extensions.getByType(BuildConfigKtExtension::class)
 
-        assertEquals("4.2.0", buildConfigKtExtension.versionOrProjectVersion(project))
+        assertThat("4.2.0").isEqualTo(buildConfigKtExtension.versionOrProjectVersion(project))
     }
 
     @Test
@@ -81,7 +81,7 @@ class BuildConfigKtExtensionTest {
         val buildConfigKtExtension = project.extensions.getByType(BuildConfigKtExtension::class)
         buildConfigKtExtension.version = "4.2.1"
 
-        assertEquals("4.2.1", buildConfigKtExtension.versionOrProjectVersion(project))
+        assertThat("4.2.1").isEqualTo(buildConfigKtExtension.versionOrProjectVersion(project))
     }
 
     @Test
@@ -89,7 +89,7 @@ class BuildConfigKtExtensionTest {
         val project = constructProject()
         val buildConfigKtExtension = project.extensions.getByType(BuildConfigKtExtension::class)
 
-        assertEquals("test", buildConfigKtExtension.packageNameOrProjectPackageName(project))
+        assertThat("test").isEqualTo(buildConfigKtExtension.packageNameOrProjectPackageName(project))
     }
 
     @Test
@@ -97,7 +97,11 @@ class BuildConfigKtExtensionTest {
         val project = constructProject(group = "io.pixeloutlaw", name = "buildConfigKt", version = "4.2.0")
         val buildConfigKtExtension = project.extensions.getByType(BuildConfigKtExtension::class)
 
-        assertEquals("io.pixeloutlaw.buildConfigKt", buildConfigKtExtension.packageNameOrProjectPackageName(project))
+        assertThat("io.pixeloutlaw.buildConfigKt").isEqualTo(
+            buildConfigKtExtension.packageNameOrProjectPackageName(
+                project
+            )
+        )
     }
 
     @Test
@@ -106,7 +110,7 @@ class BuildConfigKtExtensionTest {
         val buildConfigKtExtension = project.extensions.getByType(BuildConfigKtExtension::class)
         buildConfigKtExtension.packageName = "io.pixeloutlaw.dankMemes"
 
-        assertEquals("io.pixeloutlaw.dankMemes", buildConfigKtExtension.packageNameOrProjectPackageName(project))
+        assertThat("io.pixeloutlaw.dankMemes").isEqualTo(buildConfigKtExtension.packageNameOrProjectPackageName(project))
     }
 
     private fun constructProject(group: String? = null, name: String = "test", version: String? = null): Project {

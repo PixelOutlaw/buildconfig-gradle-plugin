@@ -1,5 +1,6 @@
 package io.pixeloutlaw.gradle.buildconfig
 
+import com.google.common.truth.Truth.assertThat
 import com.squareup.kotlinpoet.TypeSpec
 import org.gradle.api.Project
 import org.gradle.api.internal.project.ProjectInternal
@@ -10,8 +11,6 @@ import org.gradle.testfixtures.ProjectBuilder
 import org.jetbrains.kotlin.gradle.plugin.KotlinPlatformJvmPlugin
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
-import kotlin.test.assertEquals
-import kotlin.test.assertNotNull
 
 class GenerateBuildConfigKtTaskTest {
     private lateinit var project: Project
@@ -34,8 +33,8 @@ class GenerateBuildConfigKtTaskTest {
     fun doesBuildFileSpecUseProjectPackageNameForDefaultExtension() {
         val fileSpec = generateBuildConfigKtTask.buildFileSpec(buildConfigKtExtension)
 
-        assertEquals("io.pixeloutlaw.testGenerateBuildConfigKt", fileSpec.packageName)
-        assertEquals("BuildConfig", fileSpec.name)
+        assertThat("io.pixeloutlaw.testGenerateBuildConfigKt").isEqualTo(fileSpec.packageName)
+        assertThat("BuildConfig").isEqualTo(fileSpec.name)
     }
 
     @Test
@@ -43,8 +42,8 @@ class GenerateBuildConfigKtTaskTest {
         buildConfigKtExtension.packageName = "io.dankmemes"
         val fileSpec = generateBuildConfigKtTask.buildFileSpec(buildConfigKtExtension)
 
-        assertEquals("io.dankmemes", fileSpec.packageName)
-        assertEquals("BuildConfig", fileSpec.name)
+        assertThat("io.dankmemes").isEqualTo(fileSpec.packageName)
+        assertThat("BuildConfig").isEqualTo(fileSpec.name)
     }
 
     @Test
@@ -52,12 +51,12 @@ class GenerateBuildConfigKtTaskTest {
         val fileSpec = generateBuildConfigKtTask.buildFileSpec(buildConfigKtExtension)
         val typeSpecs = fileSpec.members.filter { it is TypeSpec && it.name == buildConfigKtExtension.className }
             .map { it as TypeSpec }
-        assertEquals(1, typeSpecs.size)
+        assertThat(typeSpecs.size).isEqualTo(1)
         val buildConfigTypeSpec = typeSpecs.first()
-        assertEquals(3, buildConfigTypeSpec.propertySpecs.size)
+        assertThat(buildConfigTypeSpec.propertySpecs.size).isEqualTo(3)
         val namePropertySpec = buildConfigTypeSpec.propertySpecs.first { it.name == "NAME" }
-        assertNotNull(namePropertySpec)
-        assertEquals("\"testGenerateBuildConfigKt\"", namePropertySpec.initializer?.toString())
+        assertThat(namePropertySpec).isNotNull()
+        assertThat("\"testGenerateBuildConfigKt\"").isEqualTo(namePropertySpec.initializer?.toString())
     }
 
     @Test
@@ -65,12 +64,12 @@ class GenerateBuildConfigKtTaskTest {
         val fileSpec = generateBuildConfigKtTask.buildFileSpec(buildConfigKtExtension)
         val typeSpecs = fileSpec.members.filter { it is TypeSpec && it.name == buildConfigKtExtension.className }
             .map { it as TypeSpec }
-        assertEquals(1, typeSpecs.size)
+        assertThat(typeSpecs.size).isEqualTo(1)
         val buildConfigTypeSpec = typeSpecs.first()
-        assertEquals(3, buildConfigTypeSpec.propertySpecs.size)
+        assertThat(buildConfigTypeSpec.propertySpecs.size).isEqualTo(3)
         val groupPropertySpec = buildConfigTypeSpec.propertySpecs.first { it.name == "GROUP" }
-        assertNotNull(groupPropertySpec)
-        assertEquals("\"io.pixeloutlaw\"", groupPropertySpec.initializer?.toString())
+        assertThat(groupPropertySpec).isNotNull()
+        assertThat("\"io.pixeloutlaw\"").isEqualTo(groupPropertySpec.initializer?.toString())
     }
 
     @Test
@@ -78,11 +77,11 @@ class GenerateBuildConfigKtTaskTest {
         val fileSpec = generateBuildConfigKtTask.buildFileSpec(buildConfigKtExtension)
         val typeSpecs = fileSpec.members.filter { it is TypeSpec && it.name == buildConfigKtExtension.className }
             .map { it as TypeSpec }
-        assertEquals(1, typeSpecs.size)
+        assertThat(typeSpecs.size).isEqualTo(1)
         val buildConfigTypeSpec = typeSpecs.first()
-        assertEquals(3, buildConfigTypeSpec.propertySpecs.size)
+        assertThat(buildConfigTypeSpec.propertySpecs.size).isEqualTo(3)
         val versionPropertySpec = buildConfigTypeSpec.propertySpecs.first { it.name == "VERSION" }
-        assertNotNull(versionPropertySpec)
-        assertEquals("\"4.2.0\"", versionPropertySpec.initializer?.toString())
+        assertThat(versionPropertySpec).isNotNull()
+        assertThat("\"4.2.0\"").isEqualTo(versionPropertySpec.initializer?.toString())
     }
 }

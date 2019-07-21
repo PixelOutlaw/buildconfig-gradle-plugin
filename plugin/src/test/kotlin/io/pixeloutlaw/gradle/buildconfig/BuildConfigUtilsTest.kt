@@ -1,47 +1,48 @@
 package io.pixeloutlaw.gradle.buildconfig
 
+import com.google.common.truth.Truth.assertThat
 import org.junit.jupiter.api.Test
 import java.nio.file.Paths
-import kotlin.test.assertEquals
 
 class BuildConfigUtilsTest {
     private val currentPath = Paths.get("").toAbsolutePath()
 
     @Test
     fun doesGetRootOutputPathReturnTemplatedStringForPath() {
-        assertEquals(
-            currentPath.resolve("generated-sources/buildConfigKt"),
+        assertThat(
+            currentPath.resolve("generated-sources/buildConfigKt")
+        ).isEqualTo(
             BuildConfigUtils.getRootOutputPath(currentPath)
         )
     }
 
     @Test
     fun doesCovertGavToPackageNameReturnStartingWithNoDotForEmptyPackage() {
-        assertEquals("dude", BuildConfigUtils.convertGavToPackageName("", "dude"))
+        assertThat("dude").isEqualTo(BuildConfigUtils.convertGavToPackageName("", "dude"))
     }
 
     @Test
     fun doesCovertGavToPackageNameReturnStartingWithNoDotForSpacePackage() {
-        assertEquals("dude", BuildConfigUtils.convertGavToPackageName(" ", "dude"))
+        assertThat("dude").isEqualTo(BuildConfigUtils.convertGavToPackageName(" ", "dude"))
     }
 
     @Test
     fun doesConvertGavToPackageNameReturnTemplatedString() {
-        assertEquals("dank.memes.dude", BuildConfigUtils.convertGavToPackageName("dank.memes", "dude"))
+        assertThat("dank.memes.dude").isEqualTo(BuildConfigUtils.convertGavToPackageName("dank.memes", "dude"))
     }
 
     @Test
     fun doesConvertGavToPackageNameReturnTemplatedStringWithDotsReplacedWithUnderscores() {
-        assertEquals("dank.memes.dude_man", BuildConfigUtils.convertGavToPackageName("dank.memes", "dude.man"))
+        assertThat("dank.memes.dude_man").isEqualTo(BuildConfigUtils.convertGavToPackageName("dank.memes", "dude.man"))
     }
 
     @Test
     fun doesConvertGavToPackageNameReturnTemplatedStringWithHyphensReplacedWithUnderscores() {
-        assertEquals("dank.memes.dude_man", BuildConfigUtils.convertGavToPackageName("dank.memes", "dude-man"))
+        assertThat("dank.memes.dude_man").isEqualTo(BuildConfigUtils.convertGavToPackageName("dank.memes", "dude-man"))
     }
 
     @Test
     fun doesConvertGroupIdToPathHandleStringWithDot() {
-        assertEquals(Paths.get(".", "dank", "memes"), BuildConfigUtils.convertPackageNameToPath("dank.memes"))
+        assertThat(Paths.get(".", "dank", "memes")).isEqualTo(BuildConfigUtils.convertPackageNameToPath("dank.memes"))
     }
 }

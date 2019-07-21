@@ -27,11 +27,9 @@ dependencies {
         exclude(group = "org.jetbrains.kotlin")
     }
 
-    testImplementation(Libs.kotlin_test_junit5)
-    testImplementation(Libs.junit_jupiter_api)
-    testImplementation(Libs.junit_pioneer)
+    testImplementation(Libs.junit_jupiter)
     testImplementation(Libs.mockito_junit_jupiter)
-    testRuntimeOnly(Libs.junit_jupiter_engine)
+    testImplementation(Libs.truth)
 }
 
 scmVersion {
