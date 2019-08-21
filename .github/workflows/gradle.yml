@@ -15,7 +15,7 @@ jobs:
         java-version: ${{ matrix.java }}
     - name: Make gradlew Executable
       run: chmod a+x ./composite/gradlew
-    - name: Build with Gradle
-      run: ./gradlew build
+    - name: Test with Gradle
+      run: cd composite && ./gradlew checkAll
       env:
         GRADLE_CURRENT_VERSION: ${{ matrix.gradle }}
