@@ -13,6 +13,7 @@ object BuildConfigUtils {
             .trim().trim('.')
     }
 
+    @Suppress("SpreadOperator")
     fun convertPackageNameToPath(packageName: String): Path {
         val packageNameSplit = packageName.split(".").toTypedArray()
         return Paths.get(".", *packageNameSplit)

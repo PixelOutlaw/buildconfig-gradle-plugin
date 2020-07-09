@@ -6,12 +6,10 @@ plugins {
     `java-gradle-plugin`
     `kotlin-dsl`
     `maven-publish`
-    `build-scan`
     id("de.fayard.buildSrcVersions") version Versions.de_fayard_buildsrcversions_gradle_plugin
     id("com.gradle.plugin-publish") version Versions.com_gradle_plugin_publish_gradle_plugin
     id("pl.allegro.tech.build.axion-release") version Versions.pl_allegro_tech_build_axion_release_gradle_plugin
     id("com.diffplug.gradle.spotless") version Versions.com_diffplug_gradle_spotless_gradle_plugin
-    id("com.adarshr.test-logger") version Versions.com_adarshr_test_logger_gradle_plugin
     id("io.gitlab.arturbosch.detekt") version Versions.io_gitlab_arturbosch_detekt
 }
 
@@ -85,14 +83,8 @@ java {
     targetCompatibility = JavaVersion.VERSION_1_8
 }
 
-buildScan {
-    termsOfServiceUrl = "https://gradle.com/terms-of-service"
-    termsOfServiceAgree = "yes"
-    publishAlways()
-}
-
 tasks.withType<Wrapper>().configureEach {
-    gradleVersion = "5.4.1"
+    gradleVersion = "6.5"
 }
 
 tasks.withType<KotlinCompile>().configureEach {

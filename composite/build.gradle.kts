@@ -4,7 +4,6 @@ import pl.allegro.tech.build.axion.release.domain.hooks.HooksConfig
 
 plugins {
     idea
-    `build-scan`
     id("de.fayard.buildSrcVersions") version "0.3.2"
     id("pl.allegro.tech.build.axion-release") version "1.10.0"
 }
@@ -30,12 +29,6 @@ scmVersion {
     project.version = version
 }
 
-buildScan {
-    termsOfServiceUrl = "https://gradle.com/terms-of-service"
-    termsOfServiceAgree = "yes"
-    publishAlways()
-}
-
 tasks.register("publish") {
     group = "Custom"
     description = "Publish the plugin locally"
@@ -50,8 +43,8 @@ tasks.register("publishPlugins") {
 tasks.register("checkAll") {
     group = "Custom"
     description = "Run all checks"
-    dependsOn(gradle.includedBuild("buildConfigKt").task(":validateTaskProperties"))
-    dependsOn(gradle.includedBuild("buildConfigKt").task(":check"))
+    dependsOn(gradle.includedBuild("plugin").task(":validateTaskProperties"))
+    dependsOn(gradle.includedBuild("plugin").task(":check"))
     dependsOn(gradle.includedBuild("sample-groovy").task(":generateBuildConfigKt"))
     dependsOn(gradle.includedBuild("sample-kotlin").task(":generateBuildConfigKt"))
 }
@@ -59,7 +52,7 @@ tasks.register("checkAll") {
 tasks.register("cleanAll") {
     group = "Custom"
     description = "Run all cleans"
-    dependsOn(gradle.includedBuild("buildConfigKt").task(":clean"))
+    dependsOn(gradle.includedBuild("plugin").task(":clean"))
     dependsOn(gradle.includedBuild("sample-groovy").task(":clean"))
     dependsOn(gradle.includedBuild("sample-kotlin").task(":clean"))
 }
