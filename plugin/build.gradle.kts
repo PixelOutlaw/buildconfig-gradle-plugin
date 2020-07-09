@@ -38,7 +38,7 @@ scmVersion {
         pre(
             "fileUpdate",
             mapOf<String, Any>(
-                "file" to "README.md",
+                "file" to project.rootProject.file("../README.md"),
                 "pattern" to { v, _ -> "id(\"io.pixeloutlaw.gradle.buildconfigkt\") version \"$v\"" },
                 "replacement" to { v, _ -> "id(\"io.pixeloutlaw.gradle.buildconfigkt\") version \"$v\"" }
             )
