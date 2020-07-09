@@ -39,8 +39,8 @@ scmVersion {
             "fileUpdate",
             mapOf<String, Any>(
                 "file" to project.rootProject.file("../README.md"),
-                "pattern" to { v, _ -> "id(\"io.pixeloutlaw.gradle.buildconfigkt\") version \"$v\"" },
-                "replacement" to { v, _ -> "id(\"io.pixeloutlaw.gradle.buildconfigkt\") version \"$v\"" }
+                "pattern" to org.gradle.kotlin.dsl.KotlinClosure2<String, pl.allegro.tech.build.axion.release.domain.hooks.HookContext, String>({ v, _ -> "id(\"io.pixeloutlaw.gradle.buildconfigkt\") version \"$v\"" }),
+                "replacement" to org.gradle.kotlin.dsl.KotlinClosure2<String, pl.allegro.tech.build.axion.release.domain.hooks.HookContext, String>({ v, _ -> "id(\"io.pixeloutlaw.gradle.buildconfigkt\") version \"$v\"" })
             )
         )
         pre("commit")
