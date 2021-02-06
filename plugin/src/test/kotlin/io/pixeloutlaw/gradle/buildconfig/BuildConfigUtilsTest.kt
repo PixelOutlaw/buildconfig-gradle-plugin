@@ -1,8 +1,8 @@
 package io.pixeloutlaw.gradle.buildconfig
 
 import com.google.common.truth.Truth.assertThat
-import java.nio.file.Paths
 import org.junit.jupiter.api.Test
+import java.nio.file.Paths
 
 class BuildConfigUtilsTest {
     private val currentPath = Paths.get("").toAbsolutePath()

@@ -1,51 +1,31 @@
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-import pl.allegro.tech.build.axion.release.domain.RepositoryConfig
-import pl.allegro.tech.build.axion.release.domain.hooks.HooksConfig
-
 plugins {
-    `java-gradle-plugin`
     `kotlin-dsl`
     `maven-publish`
-    id("de.fayard.buildSrcVersions") version Versions.de_fayard_buildsrcversions_gradle_plugin
-    id("com.gradle.plugin-publish") version Versions.com_gradle_plugin_publish_gradle_plugin
-    id("pl.allegro.tech.build.axion-release") version Versions.pl_allegro_tech_build_axion_release_gradle_plugin
-    id("com.diffplug.gradle.spotless") version Versions.com_diffplug_gradle_spotless_gradle_plugin
-    id("io.gitlab.arturbosch.detekt") version Versions.io_gitlab_arturbosch_detekt
+    id("org.jlleitschuh.gradle.ktlint")
+    id("io.gitlab.arturbosch.detekt")
+    id("org.jetbrains.dokka")
+    id("com.gradle.plugin-publish")
 }
 
 group = "io.pixeloutlaw.gradle"
 
 repositories {
+    gradlePluginPortal()
     jcenter()
 }
 
 dependencies {
-    implementation(Libs.kotlin_gradle_plugin)
-    implementation(Libs.kotlinpoet) {
+    implementation("org.jetbrains.kotlin:kotlin-gradle-plugin:_")
+    implementation("com.squareup:kotlinpoet:_") {
         exclude(group = "org.jetbrains.kotlin")
     }
 
-    testImplementation(Libs.junit_jupiter)
-    testImplementation(Libs.mockito_junit_jupiter)
-    testImplementation(Libs.truth)
+    testImplementation("org.junit.jupiter:junit-jupiter:_")
+    testImplementation("com.google.truth:truth:_")
 }
 
-scmVersion {
-    repository(closureOf<RepositoryConfig>() {
-        directory = project.rootProject.file("../")
-    })
-    hooks(closureOf<HooksConfig>() {
-        pre(
-            "fileUpdate",
-            mapOf<String, Any>(
-                "file" to project.rootProject.file("../README.md"),
-                "pattern" to org.gradle.kotlin.dsl.KotlinClosure2<String, pl.allegro.tech.build.axion.release.domain.hooks.HookContext, String>({ v, _ -> "id(\"io.pixeloutlaw.gradle.buildconfigkt\") version \"$v\"" }),
-                "replacement" to org.gradle.kotlin.dsl.KotlinClosure2<String, pl.allegro.tech.build.axion.release.domain.hooks.HookContext, String>({ v, _ -> "id(\"io.pixeloutlaw.gradle.buildconfigkt\") version \"$v\"" })
-            )
-        )
-        pre("commit")
-    })
-    project.version = version
+detekt {
+    baseline = file("baseline.xml")
 }
 
 gradlePlugin {
@@ -59,39 +39,25 @@ gradlePlugin {
     }
 }
 
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+    withJavadocJar()
+    withSourcesJar()
+}
+
 pluginBundle {
     website = "https://github.com/PixelOutlaw/buildconfig-gradle-plugin"
     vcsUrl = "https://github.com/PixelOutlaw/buildconfig-gradle-plugin"
     tags = listOf("kotlin", "build", "config", "buildconfig")
 }
 
-spotless {
-    kotlin {
-        ktlint()
-        trimTrailingWhitespace()
-        endWithNewline()
-    }
-    kotlinGradle {
-        ktlint()
-        trimTrailingWhitespace()
-        endWithNewline()
-    }
+tasks.getByName("javadocJar", Jar::class) {
+    dependsOn("dokkaJavadoc")
+    from(buildDir.resolve("dokka/javadoc"))
 }
 
-java {
-    sourceCompatibility = JavaVersion.VERSION_1_8
-    targetCompatibility = JavaVersion.VERSION_1_8
-}
-
-tasks.withType<Wrapper>().configureEach {
-    gradleVersion = "6.5"
-}
-
-tasks.withType<KotlinCompile>().configureEach {
-    dependsOn("spotlessApply")
+tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>() {
+    dependsOn("ktlintFormat")
     kotlinOptions.jvmTarget = "1.8"
-}
-tasks.withType<Test>().configureEach {
-    useJUnitPlatform { }
-    systemProperty("current.gradle.version", System.getenv("GRADLE_CURRENT_VERSION") ?: gradle.gradleVersion)
 }
