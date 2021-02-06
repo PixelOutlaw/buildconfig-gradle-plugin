@@ -36,6 +36,6 @@ jobs:
         run: ./gradlew wrapper --gradle-version \${{ matrix.gradle }}
       - name: Test Plugin Directly with Gradle
         run: ../gradlew check
-        working-directory: plugin
+        working-directory: buildconfig-gradle-plugin
       - name: Test Plugin Application with Gradle
         run: ./gradlew check

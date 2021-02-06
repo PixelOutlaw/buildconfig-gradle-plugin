@@ -9,4 +9,4 @@ buildscript {
 
 bootstrapRefreshVersions()
 
-rootProject.name = "buildConfigKt"
+rootProject.name = "buildconfig-gradle-plugin"
