@@ -13,7 +13,7 @@
     "upgrade-cdk": "yarn upgrade cdkactions@latest cdkactions-cli@latest"
   },
   "dependencies": {
-    "@pixeloutlaw/github-cdkactions": "3.0.0",
+    "@pixeloutlaw/github-cdkactions": "3.1.0",
     "cdkactions": "0.2.3",
     "constructs": "3.2.109"
   },
