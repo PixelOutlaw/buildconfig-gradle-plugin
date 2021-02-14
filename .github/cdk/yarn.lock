@@ -2,14 +2,14 @@
 # yarn lockfile v1
 
 
-"@pixeloutlaw/github-cdkactions@3.1.0":
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/@pixeloutlaw/github-cdkactions/-/github-cdkactions-3.1.0.tgz#e9abf5110286c8f87404844122d8f438ce98a41f"
-  integrity sha512-DtScSdKIhMVq5/725BVdSLrxzBrtxRx6SgfPqycL5LQ+1jHDR4DlgwPEMdNljL7P6KtgrEAVtoHXGYnhleyrfw==
+"@pixeloutlaw/github-cdkactions@4.1.1":
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/@pixeloutlaw/github-cdkactions/-/github-cdkactions-4.1.1.tgz#34ea4942ff3646a2a8c4ff99bc448d6570360247"
+  integrity sha512-pTdDGsPVCtMUgKk0bDbQqq91oescbonkQ2/Ta0PnWz100UY7yeKjRgsOspV0YQzyCW+toKGWxDfUisZlPmeQOw==
   dependencies:
-    cdkactions "^0.2.3"
-    constructs "^3.3.12"
-    ts-dedent "^2.0.0"
+    cdkactions "0.2.3"
+    constructs "3.3.20"
+    ts-dedent "2.0.0"
 
 "@types/node@14.14.25":
   version "14.14.25"
@@ -79,7 +79,12 @@ constructs@3.2.109:
   resolved "https://registry.yarnpkg.com/constructs/-/constructs-3.2.109.tgz#54b6bd91d70584614c2f830d8428cf217ba17ebf"
   integrity sha512-5/CNcH+EBslsmuKF2ZLptZWSpXAdNj4KRLz8ndNhjCppkSFn6nDY8mJ9ewsBXwZs9ZAI4YjEBP/SA6Vf8/7mOQ==
 
-constructs@^3.2.109, constructs@^3.3.12:
+constructs@3.3.20:
+  version "3.3.20"
+  resolved "https://registry.yarnpkg.com/constructs/-/constructs-3.3.20.tgz#0bbe09c7cd86e3a834c1ecc7ee4acc69f11ff208"
+  integrity sha512-2vVjcfH5HdjYcyubr/aEZtQvm0pHz6C62FPyRZXu1tbHrsi7r4t0P490DdtApLoB0xbhYikQaneuRfSIzsIjSQ==
+
+constructs@^3.2.109:
   version "3.3.12"
   resolved "https://registry.yarnpkg.com/constructs/-/constructs-3.3.12.tgz#9bbc8f121c9686195b4871749d91dfacba71acdb"
   integrity sha512-K2Q1qYDYYGCCFBbWLNU5ja/mrHh2tB4SpSXU/XBfNxVl20OZTXUwzlFaCfSlBL12+dNbXC6f4eTpHZ2t5o7gDg==
@@ -158,7 +163,7 @@ strip-ansi@^6.0.0:
   dependencies:
     ansi-regex "^5.0.0"
 
-ts-dedent@^2.0.0:
+ts-dedent@2.0.0, ts-dedent@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/ts-dedent/-/ts-dedent-2.0.0.tgz#47c5eb23d9096f3237cc413bc82d387d36dbe690"
   integrity sha512-DfxKjSFQfw9+uf7N9Cy8Ebx9fv5fquK4hZ6SD3Rzr+1jKP6AVA6H8+B5457ZpUs0JKsGpGqIevbpZ9DMQJDp1A==
