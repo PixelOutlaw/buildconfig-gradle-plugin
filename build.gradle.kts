@@ -1,6 +1,6 @@
 plugins {
     kotlin("jvm") version "1.4.31" apply false
-    id("io.pixeloutlaw.gradle") version "4.2.2"
+    id("io.pixeloutlaw.gradle") version "4.4.3"
     id("io.pixeloutlaw.gradle.buildconfigkt") apply false
 }
 
