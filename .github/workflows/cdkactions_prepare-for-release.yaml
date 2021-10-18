@@ -35,7 +35,7 @@ jobs:
       - name: Test Plugin Application with Gradle
         run: ./gradlew check
       - name: Push Tag
-        uses: mathieudutour/github-tag-action@v5.1
+        uses: mathieudutour/github-tag-action@v5.6
         with:
           custom_tag: ${{ steps.gitversion.outputs.semVer }}
           github_token: ${{ secrets.ACTIONS_PAT }}
